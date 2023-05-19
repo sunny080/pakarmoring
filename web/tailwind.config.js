@@ -22,6 +22,7 @@ module.exports = {
         width: 'width',
         height: 'height',
         'max-h': 'max-height',
+        pr: 'padding-right',
       },
     },
   },
