@@ -29,8 +29,6 @@ export default {
       title: 'Action',
       name: 'action',
       type: 'string',
-      validation: (Rule) =>
-        Rule.custom((variant) => (variant === undefined ? 'This field must not be empty.' : true)),
       options: {
         list: ['link', 'form'],
       },

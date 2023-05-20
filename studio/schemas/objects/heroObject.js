@@ -4,12 +4,11 @@ export default {
   type: 'object',
   fields: [
     {
-      title: 'Position',
-      name: 'position',
-      type: 'string',
-      options: {
-        list: ['left', 'right', 'top', 'bottom'],
-      },
+      title: 'Is Reversed',
+      name: 'isReversed',
+      type: 'boolean',
+      initialValue: true,
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Heading',
@@ -24,9 +23,14 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Side Image',
+      name: 'sideImage',
+      type: 'customImage',
+    },
+    {
       title: 'Background Image',
       name: 'backgroundImage',
-      type: 'image',
+      type: 'customImage',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -42,11 +46,13 @@ export default {
   ],
   preview: {
     select: {
-      questionText: 'questionText',
+      title: 'heading',
+      media: 'backgroundImage',
     },
-    prepare({questionText = 'No title'}) {
+    prepare({title = 'No title', media}) {
       return {
-        title: questionText,
+        title,
+        media,
       }
     },
   },

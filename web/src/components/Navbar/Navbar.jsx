@@ -18,7 +18,7 @@ import { hideBodyScroll, showBodyScroll } from '../../utils/helpers'
 export const Navbar = ({ otherClasses }) => {
   const navbarClasses = clsx(
     otherClasses,
-    'fixed top-0 translate-x-[-50%] left-2/4  z-20 w-full bg-black'
+    'fixed top-0 left-0 z-20 w-full bg-black'
   )
 
   const [toggleHamburger, setToggleHamburger] = useState(false)

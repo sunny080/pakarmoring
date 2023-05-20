@@ -5,7 +5,13 @@ import SliderSection from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-export const Slider = ({ otherClasses, children, customSettings,customClass }) => {
+export const Slider = ({
+  otherClasses,
+  children,
+  customSettings,
+  customClass,
+  ref,
+}) => {
   const sliderClasses = clsx(otherClasses)
 
   const settings = {
@@ -18,7 +24,7 @@ export const Slider = ({ otherClasses, children, customSettings,customClass }) =
   }
   return (
     <div className={sliderClasses} data-testid="slider">
-      <SliderSection {...settings} className={customClass}>
+      <SliderSection {...settings} className={customClass} ref={ref}>
         {children}
       </SliderSection>
     </div>

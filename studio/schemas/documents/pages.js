@@ -27,8 +27,7 @@ export default {
       title: 'Indexed',
       name: 'isIndexed',
       type: 'boolean',
-      initialValue: true,
-      validation: (Rule) => Rule.required(),
+      initialValue: false,
     },
     {
       title: 'Title',
