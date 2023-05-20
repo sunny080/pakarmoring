@@ -6,13 +6,11 @@ import clientConfig from '../../../client-config'
 import ImageUrlBuilder from '@sanity/image-url'
 import { Link } from 'gatsby'
 
-
 const builder = ImageUrlBuilder({
   ...clientConfig.sanity,
 })
 
 const SampleImageComponent = ({ value, isInline }) => {
-  console.log(value)
   const { width, height } = getImageDimensions(value)
   return (
     <img

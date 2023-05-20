@@ -13,11 +13,12 @@ import armoredVehiclesCashBgImage from '../../images/armored-vehicles-menu-cash.
 import armoredVehiclesLimuBgImage from '../../images/armored-vehicles-menu-limu.png'
 import armoredVehiclesTruckBgImage from '../../images/armored-vehicles-menu-truck.webp'
 import armoredVehiclesSpecialBgImage from '../../images/armored-vehicles-menu-special.png'
+import { hideBodyScroll, showBodyScroll } from '../../utils/helpers'
 
 export const Navbar = ({ otherClasses }) => {
   const navbarClasses = clsx(
     otherClasses,
-    'fixed top-0 translate-x-[-50%] left-2/4  z-20 w-full'
+    'fixed top-0 translate-x-[-50%] left-2/4  z-20 w-full bg-black'
   )
 
   const [toggleHamburger, setToggleHamburger] = useState(false)
@@ -29,10 +30,14 @@ export const Navbar = ({ otherClasses }) => {
   const filterByCars = (e) => {
     setFilteredCars(e)
   }
-
+  if (toggleHamburger) {
+    hideBodyScroll()
+  } else {
+    showBodyScroll()
+  }
   return (
     <nav className={navbarClasses} data-testid="navbar">
-      <div className="w-full max-w-[1512px] px-4 lg:px-20 mx-auto">
+      <div className="w-full max-w-[1512px] px-4 lg:px-10 xl:px-20 mx-auto">
         <div className="w-full lg:flex justify-end gap-5 items-center py-2 hidden ">
           <p className="flex items-center gap-2 text-white font-semibold font-Exo2">
             <Icon

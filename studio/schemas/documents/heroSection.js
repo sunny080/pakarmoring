@@ -1,6 +1,6 @@
 export default {
-  title: 'About Sticky Section',
-  name: 'aboutStickySection',
+  title: 'Hero Section',
+  name: 'heroSection',
   type: 'document',
   fields: [
     {
@@ -10,9 +10,14 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Heading',
-      name: 'heading',
-      type: 'string',
+      title: 'Cards',
+      name: 'cards',
+      type: 'array',
+      of: [
+        {
+          type: 'heroObject',
+        },
+      ],
     },
   ],
   preview: {

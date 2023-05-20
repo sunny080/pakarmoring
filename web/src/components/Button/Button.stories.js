@@ -13,13 +13,7 @@ export default {
   argTypes: {
     variant: {
       defaultValue: 'primary',
-      options: [
-        'primary',
-        'secondary',
-        'tertiary',
-        'tertiary-border',
- 
-      ],
+      options: ['primary', 'secondary', 'tertiary', 'text-link'],
       control: { type: 'select' },
     },
     label: {
@@ -50,9 +44,9 @@ ButtonTertiary.args = {
   label: 'Hire Me',
   onClick,
 }
-export const ButtonTertiaryBorder = Template.bind({})
-ButtonTertiaryBorder.args = {
-  variant: 'tertiary-border',
+export const ButtonTextLink = Template.bind({})
+ButtonTextLink.args = {
+  variant: 'text-link',
   label: 'Hire Me',
   onClick,
 }

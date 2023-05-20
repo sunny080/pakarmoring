@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import clsx from 'clsx'
 
 import './button.scss'
+import Icon from '../Icon/Icon'
 
 export const Button = ({
   label = '',
@@ -20,15 +21,35 @@ export const Button = ({
       `bg-white px-10 py-3 rounded text-base leading-6 font-normal text-black font-inter hover:bg-[#c7c7c7] transition `,
     variant === 'tertiary' &&
       `hover:bg-primary_orange_600 px-10 py-3 rounded text-base leading-6 font-normal text-white font-inter hover:bg-[#cb420b] transition border-[1px] border-primary_orange_600 `,
-    variant === 'tertiary-border' &&
-      `px-10 py-3 rounded text-base leading-6 font-normal text-white font-inter border-[1px] border-white hover:border-[0px] hover:bg-white hover:text-black transition`
+    variant === 'text-link' &&
+      `text-primary_blue_600 font-bold text-base leading-6 tracking-[0.01em] font-Work-Sans flex items-center gap-2 group`
   )
+
+  const withIcon = variant === 'text-link'
 
   if (slug && !form) {
     const { current } = slug
     return (
       <Link to={`/${current}`} className={buttonClasses}>
         {label}
+        {withIcon && (
+          <div className="rounded-full w-7 h-7 border-[2px] border-primary_blue_600 flex items-center justify-center relative overflow-hidden">
+            <div className="relative  group-hover:transition-[3s] group-hover:left-[4px]  left-[-13px] transition-[3s]">
+              <Icon
+                icon="mini-menu-arrow-left"
+                iconHeight={14}
+                iconWidth={14}
+              />
+            </div>
+            <div className="relative   group-hover:transition-[3s] group-hover:left-[13px]  left-[-2px] transition-[3s]">
+              <Icon
+                icon="mini-menu-arrow-left"
+                iconHeight={14}
+                iconWidth={14}
+              />
+            </div>
+          </div>
+        )}
       </Link>
     )
   }
@@ -42,6 +63,16 @@ export const Button = ({
       data-testid="button"
     >
       {label}
+      {withIcon && (
+        <div className="rounded-full w-7 h-7 border-[2px] border-primary_blue_600 flex items-center justify-center relative overflow-hidden">
+          <div className="relative group-hover:left-[24px]  left-[12px] transition-[3s]">
+            <Icon icon="mini-menu-arrow-left" iconHeight={24} iconWidth={24} />
+          </div>
+          <div className="relative group-hover:left-[12px]  left-[-24px] transition-[3s]">
+            <Icon icon="mini-menu-arrow-left" iconHeight={24} iconWidth={24} />
+          </div>
+        </div>
+      )}
     </button>
   )
 }

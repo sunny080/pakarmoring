@@ -13,8 +13,10 @@
   @media (min-width: 1024px) {
     height: auto;
     clip-path: none;
+    overflow: visible;
   }
   transition: 0.3s;
+  overflow: auto;
   height: calc(100vh - 94px);
   clip-path: circle(0 at 100% 0);
   > ul {
