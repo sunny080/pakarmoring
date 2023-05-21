@@ -8,7 +8,10 @@ import RichText from '../../components/RichText/RichText'
 import Button from '../../components/Button/Button'
 
 export const HeroSection = ({ otherClasses, cards }) => {
-  const heroSectionClasses = clsx(otherClasses, 'mt-[74px] lg:mt-[136px]')
+  const heroSectionClasses = clsx(
+    otherClasses,
+    'mt-[74px] lg:mt-[136px] hero_section_main_container_box_shadow'
+  )
 
   const [currentIndex, setCurrentIndex] = useState()
 

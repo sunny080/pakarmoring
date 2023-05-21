@@ -50,6 +50,26 @@ export default {
           },
           to: [{type: 'heroSection'}],
         },
+        {
+          title: 'Special Cards Intro Section',
+          name: 'specialCardsIntroSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'specialCardsIntroSection'}],
+        },
+        {
+          title: 'Intro Section',
+          name: 'introSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'introSection'}],
+        },
       ],
     },
   ],

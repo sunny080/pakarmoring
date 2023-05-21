@@ -13,6 +13,7 @@ module.exports = {
         Open_Sans: ["'Open Sans', sans-serif"],
       },
       colors: {
+        primary_green_600: '#155214',
         primary_orange_600: '#FF4900',
         primary_orange_100: '#330D00',
         black: '#000',

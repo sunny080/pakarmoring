@@ -16,6 +16,7 @@ export const Image = ({ imageData, otherClasses, ...props }) => {
       {...props}
       alt={title}
       title={title}
+      imgClassName=""
       className={imageClasses}
       image={gatsbyImageData}
     />
@@ -28,7 +29,7 @@ export const query = graphql`
   fragment CustomImage on SanityCustomImage {
     asset {
       title
-      gatsbyImageData(placeholder:NONE)
+      gatsbyImageData(placeholder: NONE)
     }
   }
 `
