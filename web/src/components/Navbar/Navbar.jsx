@@ -72,7 +72,7 @@ export const Navbar = ({ otherClasses }) => {
             <img
               src={logo}
               alt="logo"
-              className="w-[70px] lg:w-[90px] h-[78px] lg:h-[100px]"
+              className="w-[50px] lg:w-[60px] h-[58px] lg:h-[70px]"
             />
             <div className="lg:flex flex-col gap-1 hidden ">
               <Heading type="h5" otherClasses="text-white font-bold font-Exo2 ">

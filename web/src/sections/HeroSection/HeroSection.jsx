@@ -8,7 +8,7 @@ import RichText from '../../components/RichText/RichText'
 import Button from '../../components/Button/Button'
 
 export const HeroSection = ({ otherClasses, cards }) => {
-  const heroSectionClasses = clsx(otherClasses, 'mt-[94px] lg:mt-[156px]')
+  const heroSectionClasses = clsx(otherClasses, 'mt-[74px] lg:mt-[136px]')
 
   const [currentIndex, setCurrentIndex] = useState()
 
@@ -56,12 +56,12 @@ export const HeroSection = ({ otherClasses, cards }) => {
             index
           ) => {
             return (
-              <div className="w-full h-[700px] relative bg-black overflow-hidden ">
+              <div className="w-full h-[500px] lg:h-[700px] relative bg-black overflow-hidden ">
                 <Image
                   imageData={backgroundImage}
                   otherClasses={clsx(
                     '!absolute top-0 left-0 h-full w-full transition duration-[7s]',
-                    currentIndex === index ? 'scale-125' : 'scale-1'
+                    currentIndex === index ? 'scale-[1.1]' : 'scale-1'
                   )}
                 />
                 <div className="h-full flex items-center w-full relative">
@@ -111,7 +111,7 @@ export const HeroSection = ({ otherClasses, cards }) => {
                         )}
                       </div>
                     </div>
-                    <div className="w-full lg:w-[50%]">
+                    <div className="hidden lg:block w-full lg:w-[50%]">
                       {sideImage?.asset && (
                         <Image
                           objectFit="contain"
