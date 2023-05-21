@@ -30,7 +30,7 @@ export const HeroSection = ({ otherClasses, cards }) => {
     arrows: true,
     fade: true,
     slidesToShow: 1,
-    autoplay: false,
+    autoplay: true,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
