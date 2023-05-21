@@ -85,7 +85,7 @@ export const Navbar = ({ otherClasses }) => {
           </Link>
           <div
             className={clsx(
-              'flex px-4 lg:px-0 lg:flex-row flex-col gap-6 justify-between py-10 lg:py-0 lg:justify-start items-center lg:static absolute top-[94px] lg:top-auto left-0 lg:left-auto lg:w-auto w-full bg-[#1D1D20] lg:bg-transparent main_mobile_toggle_menu',
+              'flex px-4 lg:px-0 lg:flex-row flex-col gap-6 justify-between py-10 lg:py-0 lg:justify-start items-center lg:static absolute top-[74px] lg:top-auto left-0 lg:left-auto lg:w-auto w-full bg-[#1D1D20] lg:bg-transparent main_mobile_toggle_menu',
               toggleHamburger ? 'mobile_toggle_menu_active' : ''
             )}
           >
