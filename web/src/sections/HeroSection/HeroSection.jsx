@@ -36,7 +36,6 @@ export const HeroSection = ({ otherClasses, cards }) => {
     prevArrow: <SamplePrevArrow />,
   }
 
-  console.log(currentIndex)
   return (
     <section className={heroSectionClasses} data-testid="hero-section">
       <Slider
@@ -56,7 +55,10 @@ export const HeroSection = ({ otherClasses, cards }) => {
             index
           ) => {
             return (
-              <div className="w-full h-[500px] lg:h-[700px] relative bg-black overflow-hidden ">
+              <div
+                key={index}
+                className="w-full h-[500px] lg:h-[700px] relative bg-black overflow-hidden "
+              >
                 <Image
                   imageData={backgroundImage}
                   otherClasses={clsx(

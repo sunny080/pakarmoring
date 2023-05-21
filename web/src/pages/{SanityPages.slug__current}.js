@@ -5,7 +5,6 @@ import Layout from '../components/Layout/Layout'
 import Seo from '../components/seo'
 
 const IndexPage = (props) => {
-  console.log(props)
   return (
     <Layout>
       <EntryRenderer pageBuilderData={props.data.page.pageBuilder} />
