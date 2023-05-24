@@ -27,7 +27,7 @@ export default {
       title: 'Indexed',
       name: 'isIndexed',
       type: 'boolean',
-      initialValue: false,
+      initialValue: true,
     },
     {
       title: 'Title',
@@ -69,6 +69,16 @@ export default {
             disableNew: true,
           },
           to: [{type: 'introSection'}],
+        },
+        {
+          title: 'Featured Cars Section',
+          name: 'featuredCarsSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'featuredCarsSection'}],
         },
       ],
     },

@@ -1,3 +1,5 @@
+import armoredVehiclePages from './documents/armoredVehiclePages'
+import featuredCarsSection from './documents/featuredCarsSection'
 import heroSection from './documents/heroSection'
 import introSection from './documents/introSection'
 import pages from './documents/pages'
@@ -16,7 +18,8 @@ export const schemaTypes = [
   specialCardsIntroSection,
   introSection,
   pages,
-
+  featuredCarsSection,
+  armoredVehiclePages,
   //  Objects
   bodyPortableText,
   button,

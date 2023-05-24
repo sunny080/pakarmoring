@@ -32,7 +32,7 @@ export const IntroSection = ({
           </p>
           <Heading
             type="h1"
-            otherClasses="text-black font-Exo2 font-normal after:block after:h-[3px] after:rounded-[2px] after:w-[70px] after:bg-primary_green_600 after:mt-4  "
+            otherClasses="text-black font-Exo2 font-semibold after:block after:h-[3px] after:rounded-[2px] after:w-[70px] after:bg-primary_green_600 after:mt-4  "
           >
             {heading}
           </Heading>
@@ -60,10 +60,10 @@ export const IntroSection = ({
         >
           Learn More About Us
           <Icon
-            icon="button-arrow-left"
+            icon="chevron-down"
             otherClasses={clsx(
               'transition duration-1000',
-              toggleDesc ? 'rotate-90' : '-rotate-90'
+              toggleDesc ? 'rotate-180' : 'rotate-0'
             )}
             iconHeight={18}
             iconWidth={18}
