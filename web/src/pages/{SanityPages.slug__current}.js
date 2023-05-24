@@ -29,6 +29,7 @@ export const query = graphql`
       pageBuilder {
         ...HeroSection
         ...SpecialCardsIntroSection
+        ...IntroSection
       }
     }
   }

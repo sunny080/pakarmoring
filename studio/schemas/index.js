@@ -7,7 +7,6 @@ import button from './objects/button'
 import heroObject from './objects/heroObject'
 import iframe from './objects/iframe'
 import image from './objects/image'
-import introObject from './objects/introObject'
 import specialCardsIntroObject from './objects/specialCardsIntroObject'
 import youtube from './objects/youtube'
 
@@ -26,5 +25,4 @@ export const schemaTypes = [
   youtube,
   heroObject,
   specialCardsIntroObject,
-  introObject,
 ]

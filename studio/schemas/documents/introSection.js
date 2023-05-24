@@ -10,16 +10,44 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Generic Two Column',
-      name: 'genericTwoColumn',
-      type: 'introObject',
+      title: 'Title',
+      name: 'title',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Heading',
+      name: 'heading',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Sub Text',
+      name: 'subText',
+      type: 'bodyPortableText',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'url',
+      title: 'Url',
+      type: 'url',
+      description: `Add the testimnials Video Url Here`,
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ['http', 'https', 'mailto', 'tel'],
+        }),
+    },
+    {
+      title: 'Describtion',
+      name: 'describtion',
+      type: 'bodyPortableText',
       validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     select: {
       title: 'identifier',
-      media: 'genericTwoColumn.',
     },
     prepare({title = 'No title'}) {
       return {

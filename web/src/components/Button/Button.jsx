@@ -18,7 +18,7 @@ export const Button = ({
     variant === 'primary' &&
       `bg-white px-10 py-3 rounded text-base leading-6 font-semibold text-black font-Exo2 hover:bg-[#bdbdbd] transition `,
     variant === 'secondary' &&
-      `bg-white px-10 py-3 rounded text-base leading-6 font-normal text-black font-inter hover:bg-[#c7c7c7] transition `,
+      `bg-primary_green_600 px-10 py-3 rounded text-base leading-6 font-semibold text-white font-Exo2 hover:bg-[#133807] transition `,
     variant === 'tertiary' &&
       `hover:bg-primary_orange_600 px-10 py-3 rounded text-base leading-6 font-normal text-white font-inter hover:bg-[#cb420b] transition border-[1px] border-primary_orange_600 `,
     variant === 'text-link' &&
