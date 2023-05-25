@@ -3,6 +3,7 @@ import HeroSection from '../../sections/HeroSection/HeroSection'
 import SpecialCardsIntroSection from '../../sections/SpecialCardsIntroSection/SpecialCardsIntroSection'
 import IntroSection from '../../sections/IntroSection/IntroSection'
 import FeaturedCarsSection from '../../sections/FeaturedCarsSection/FeaturedCarsSection'
+import OurClientSection from '../../sections/OurClientSection/OurClientSection'
 
 const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
@@ -23,6 +24,8 @@ const EntryRenderer = ({ pageBuilderData, ...props }) => {
         return (
           <FeaturedCarsSection key={__typename} {...sectionData} {...props} />
         )
+      case 'SanityOurClientSection':
+        return <OurClientSection key={__typename} {...sectionData} {...props} />
 
       default:
         return null

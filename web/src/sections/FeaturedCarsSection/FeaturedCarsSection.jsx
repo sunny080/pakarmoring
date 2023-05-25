@@ -6,11 +6,45 @@ import RichText from '../../components/RichText/RichText'
 import './featuredcarsection.scss'
 import Slider from '../../components/Slider/Slider'
 import Image from '../../components/Image/Image'
+import Icon from '../../components/Icon/Icon'
 export const FeaturedCarsSection = ({ otherClasses, heading, _rawSubText }) => {
   const featuredCarsSectionClasses = clsx(
     otherClasses,
-    'py-20 bg-[#15521438] my-[64px] lg:my-[120px]'
+    'pb-[120px] pt-20 bg-[#15521438] my-[64px] lg:my-[120px]'
   )
+  function SampleNextArrow(props) {
+    const { onClick } = props
+    return (
+      <button
+        className="lg:block hidden absolute -left-12 top-2/4 translate-y-[-50%] p-2 border-[1px] border-black rounded-full transition duration-300 hover:scale-[1.1]"
+        onClick={onClick}
+      >
+        <Icon
+          icon="chevron-down"
+          otherClasses="rotate-90"
+          iconHeight={24}
+          iconWidth={24}
+        />
+      </button>
+    )
+  }
+
+  function SamplePrevArrow(props) {
+    const { onClick } = props
+    return (
+      <button
+        className="lg:block hidden absolute -right-12 top-2/4 translate-y-[-50%] p-2 border-[1px] border-black rounded-full transition duration-300 hover:scale-[1.1]"
+        onClick={onClick}
+      >
+        <Icon
+          icon="chevron-down"
+          otherClasses="-rotate-90"
+          iconHeight={24}
+          iconWidth={24}
+        />
+      </button>
+    )
+  }
 
   const {
     allSanityArmoredVehiclePages: { nodes },
@@ -31,11 +65,40 @@ export const FeaturedCarsSection = ({ otherClasses, heading, _rawSubText }) => {
   `)
 
   const settings = {
+    dots: true,
     infinite: true,
     speed: 1000,
     slidesToShow: 3,
     autoplay: true,
     slidesToScroll: 1,
+    nextArrow: <SamplePrevArrow />,
+    prevArrow: <SampleNextArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          centerMode: true,
+          centerPadding: '30px',
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '80px',
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '30px',
+        },
+      },
+    ],
   }
 
   return (
@@ -57,7 +120,10 @@ export const FeaturedCarsSection = ({ otherClasses, heading, _rawSubText }) => {
           />
         </div>
         <div className="w-full mt-10">
-          <Slider customSettings={settings}>
+          <Slider
+            customSettings={settings}
+            customClass="featured_cars_section_slider"
+          >
             {nodes.map(({ image, heading, slug: { current } }) => {
               return (
                 <div className="w-full px-3">

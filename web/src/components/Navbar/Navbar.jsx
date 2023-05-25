@@ -46,7 +46,7 @@ export const Navbar = ({ otherClasses }) => {
               iconWidth={19.89}
             />
             <a href="tel:03039234222">03039234222</a> |{' '}
-            <a href="tel:0303 9234333">0303 9234333</a>
+            <a href="tel:03039234333">0303 9234333</a>
           </p>
           <a
             href="mailto:info@pakarmoring.com"

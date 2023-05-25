@@ -8,3 +8,45 @@
     color: #353535;
   }
 }
+
+.featured_cars_section_slider {
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem 0;
+    bottom: -80px;
+
+    list-style-type: none;
+
+    li {
+      width: fit-content !important;
+      height: fit-content !important;
+    }
+
+    button {
+      transition: 0.3s;
+      display: block;
+      width: 8px !important;
+      height: 8px !important;
+      padding: 0;
+      border: none;
+      border-radius: 100%;
+      background-color: #23521590 !important;
+      position: relative !important;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    li.slick-active button {
+      transition: 0.3s;
+
+      background-color: #235215 !important;
+      border-radius: 6px;
+      width: 12px !important;
+      height: 12px !important;
+    }
+  }
+}

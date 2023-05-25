@@ -80,6 +80,16 @@ export default {
           },
           to: [{type: 'featuredCarsSection'}],
         },
+        {
+          title: 'Our Client Section',
+          name: 'ourClientSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'ourClientSection'}],
+        },
       ],
     },
   ],
