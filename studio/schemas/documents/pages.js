@@ -90,6 +90,26 @@ export default {
           },
           to: [{type: 'ourClientSection'}],
         },
+        {
+          title: 'Faq Sections',
+          name: 'faqSections',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'faqSections'}],
+        },
+        {
+          title: 'Mini Hero Section',
+          name: 'miniHeroSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'miniHeroSection'}],
+        },
       ],
     },
   ],

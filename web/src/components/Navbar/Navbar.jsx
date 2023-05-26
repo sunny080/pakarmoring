@@ -825,6 +825,14 @@ export const Navbar = ({ otherClasses }) => {
                   </div>
                 </div>
               </li>
+              <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
+                <Link
+                  to="/faqs"
+                  className="w-full lg:text-center text-left text-lg font-semibold text-white font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block"
+                >
+                  FAQs
+                </Link>
+              </li>
             </ul>
             <div className="w-full lg:w-auto flex flex-col items-center gap-4">
               <Button
