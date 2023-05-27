@@ -88,10 +88,10 @@ export const ContactForm = ({
             Contact Us
           </Heading>
           <form
-            data-netlify="true"
             method="post"
             onSubmit={handleSubmit}
             action=""
+            data-netlify="true"
             // netlify
             name="Contact Us"
             className={clsx('w-full mt-5 md:mt-8')}
@@ -157,7 +157,7 @@ export const ContactForm = ({
               >
                 What Can We Help You With?
               </label>
-              {/* <select
+              <select
                 id="option"
                 type="text"
                 onChange={handleChange}
@@ -175,7 +175,7 @@ export const ContactForm = ({
                     </option>
                   )
                 })}
-              </select> */}
+              </select>
             </div>
             <div className="w-full mb-6">
               <label
