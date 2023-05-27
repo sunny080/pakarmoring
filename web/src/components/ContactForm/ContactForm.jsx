@@ -88,10 +88,11 @@ export const ContactForm = ({
             Contact Us
           </Heading>
           <form
+            data-netlify="true"
             method="post"
             onSubmit={handleSubmit}
             action=""
-            netlify
+            // netlify
             name="Contact Us"
             className={clsx('w-full mt-5 md:mt-8')}
           >
