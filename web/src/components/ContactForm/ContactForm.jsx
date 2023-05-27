@@ -54,7 +54,6 @@ export const ContactForm = ({
     }
   }
 
-  console.log(toggleStyle)
   return (
     <div className={contactFormClasses} data-testid="contact-form">
       <div
@@ -89,10 +88,10 @@ export const ContactForm = ({
             Contact Us
           </Heading>
           <form
-            data-netlify="true"
             method="post"
             onSubmit={handleSubmit}
             action=""
+            netlify
             name="Contact Us"
             className={clsx('w-full mt-5 md:mt-8')}
           >
@@ -175,16 +174,6 @@ export const ContactForm = ({
                     </option>
                   )
                 })}
-                {/* {industires.map(({ title }, index) => {
-                return (
-                  <option
-                    key={index}
-                    value={'I&#8217;m interested in ' + title + 'Accounting'}
-                  >
-                    I’m interested in {title} Accounting
-                  </option>
-                )
-              })} */}
               </select>
             </div>
             <div className="w-full mb-6">
