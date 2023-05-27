@@ -157,7 +157,7 @@ export const ContactForm = ({
               >
                 What Can We Help You With?
               </label>
-              <select
+              {/* <select
                 id="option"
                 type="text"
                 onChange={handleChange}
@@ -175,7 +175,7 @@ export const ContactForm = ({
                     </option>
                   )
                 })}
-              </select>
+              </select> */}
             </div>
             <div className="w-full mb-6">
               <label
