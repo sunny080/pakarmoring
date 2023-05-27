@@ -49,7 +49,7 @@ export const FeaturedCarsSection = ({ otherClasses, heading, _rawSubText }) => {
   const {
     allSanityArmoredVehiclePages: { nodes },
   } = useStaticQuery(graphql`
-    query featuredCards {
+    query dropDown {
       allSanityArmoredVehiclePages {
         nodes {
           heading

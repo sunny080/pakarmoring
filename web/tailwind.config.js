@@ -25,6 +25,7 @@ module.exports = {
         'max-h': 'max-height',
         pr: 'padding-right',
         pb: 'padding-bottom',
+        op: 'opacity',
       },
     },
   },

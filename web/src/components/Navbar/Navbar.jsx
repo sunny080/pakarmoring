@@ -15,7 +15,7 @@ import armoredVehiclesTruckBgImage from '../../images/armored-vehicles-menu-truc
 import armoredVehiclesSpecialBgImage from '../../images/armored-vehicles-menu-special.png'
 import { hideBodyScroll, showBodyScroll } from '../../utils/helpers'
 
-export const Navbar = ({ otherClasses }) => {
+export const Navbar = ({ otherClasses, toggleCancel }) => {
   const navbarClasses = clsx(
     otherClasses,
     'fixed top-0 left-0 z-20 w-full bg-black'
@@ -838,6 +838,7 @@ export const Navbar = ({ otherClasses }) => {
               <Button
                 label="Contact Us"
                 variant="primary"
+                onClick={() => toggleCancel('Contact Us')}
                 otherClasses="w-full lg:w-fit "
               />
               <a
