@@ -151,7 +151,7 @@ export const ContactForm = ({
                 />
               </div>
             </div>
-            {/* <div className="w-full flex flex-col gap-2 mb-6">
+            <div className="w-full flex flex-col gap-2 mb-6">
               <label
                 htmlFor="option"
                 className="font-Work-Sans text-sm font-semibold text-gray-800 "
@@ -177,7 +177,7 @@ export const ContactForm = ({
                   )
                 })}
               </select>
-            </div> */}
+            </div>
             <div className="w-full mb-6">
               <label
                 htmlFor="description"

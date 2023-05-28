@@ -18,7 +18,7 @@ import { hideBodyScroll, showBodyScroll } from '../../utils/helpers'
 export const Navbar = ({ otherClasses, toggleCancel }) => {
   const navbarClasses = clsx(
     otherClasses,
-    'fixed top-0 left-0 z-20 w-full bg-black'
+    'fixed top-0 left-0 z-20 w-full bg-white shadow-md'
   )
 
   const [toggleHamburger, setToggleHamburger] = useState(false)
@@ -37,11 +37,11 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
   }
   return (
     <nav className={navbarClasses} data-testid="navbar">
-      <div className="w-full max-w-[1512px] px-4 lg:px-10 xl:px-20 mx-auto">
+      <div className="w-full max-w-[1512px] px-4 lg:px-10 xl:px-20 mx-auto ">
         <div className="w-full lg:flex justify-end gap-5 items-center py-2 hidden ">
-          <p className="flex items-center gap-2 text-white font-semibold font-Exo2">
+          <p className="flex items-center gap-2 text-black font-semibold font-Exo2">
             <Icon
-              icon="white-navbar-phone-icon"
+              icon="green-navbar-phone-icon"
               iconHeight={19.89}
               iconWidth={19.89}
             />
@@ -50,10 +50,10 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
           </p>
           <a
             href="mailto:info@pakarmoring.com"
-            className="flex items-center gap-2 text-white font-semibold font-Exo2"
+            className="flex items-center gap-2 text-black font-semibold font-Exo2"
           >
             <Icon
-              icon="white-navbar-email-icon"
+              icon="green-navbar-email-icon"
               iconHeight={19.89}
               iconWidth={19.89}
             />
@@ -63,7 +63,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
         <div className="w-full flex items-center justify-between py-2 ">
           <a href="tel:03039234222" className="lg:hidden">
             <Icon
-              icon="white-navbar-phone-icon"
+              icon="green-navbar-phone-icon"
               iconHeight={24}
               iconWidth={24}
             />
@@ -75,23 +75,23 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
               className="w-[50px] lg:w-[60px] h-[58px] lg:h-[70px]"
             />
             <div className="lg:flex flex-col gap-1 hidden ">
-              <Heading type="h5" otherClasses="text-white font-bold font-Exo2 ">
+              <Heading type="h5" otherClasses="text-black font-bold font-Exo2 ">
                 PAK ARMORING (PVT) LTD.
               </Heading>
-              <p className="text-sm font-normal font-Open_Sans text-white leading-5">
+              <p className="text-sm font-normal font-Open_Sans text-black leading-5">
                 ARMORED VEHICLES SPECIALIST
               </p>
             </div>
           </Link>
           <div
             className={clsx(
-              'flex px-4 lg:px-0 lg:flex-row flex-col gap-6 justify-between py-10 lg:py-0 lg:justify-start items-center lg:static absolute top-[74px] lg:top-auto left-0 lg:left-auto lg:w-auto w-full bg-[#1D1D20] lg:bg-transparent main_mobile_toggle_menu',
+              'flex px-4 lg:px-0 lg:flex-row flex-col gap-6 justify-between py-10 lg:py-0 lg:justify-start items-center lg:static absolute top-[74px] lg:top-auto left-0 lg:left-auto lg:w-auto w-full bg-[#fafffb] lg:bg-transparent main_mobile_toggle_menu',
               toggleHamburger ? 'mobile_toggle_menu_active' : ''
             )}
           >
             <ul className="w-full lg:w-auto flex lg:flex-row flex-col lg:gap-6">
               <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
-                <button className="w-full lg:text-center text-left text-lg font-semibold text-white font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block">
+                <button className="w-full lg:text-center text-left text-lg font-semibold text-black font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block">
                   Company
                 </button>
                 <div className="group-hover:max-h-[600px] h-fit lg:bg-[#222222] duration-300 max-h-[0px] overflow-hidden transition-max-h lg:absolute top-20 left-2/4 lg:translate-x-[-50%] lg:min-w-[750px] lg:w-[750px] w-full flex ">
@@ -127,7 +127,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                         About Us
                       </Heading>
                       <ul className="grid lg:grid-cols-2 lg:gap-4 lg:py-6">
-                        <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -137,7 +137,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Mission & Vision
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -147,7 +147,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Message CEO
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -157,7 +157,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Our Team
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -167,7 +167,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Our Clients
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -186,7 +186,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                 </div>
               </li>
               <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
-                <button className="w-full lg:text-center text-left text-lg font-semibold text-white font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0  relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block">
+                <button className="w-full lg:text-center text-left text-lg font-semibold text-black font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0  relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block">
                   Armored Vehicles
                 </button>
                 <div className="group-hover:max-h-[600px] h-fit lg:bg-[#222222] duration-300 max-h-[0px] overflow-hidden transition-max-h lg:absolute top-20 left-2/4 lg:translate-x-[-50%] lg:min-w-[750px] lg:w-[750px] w-full flex ">
@@ -336,7 +336,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                     <div className="relative w-full hidden lg:block">
                       {filteredCars === 'suv' && (
                         <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
-                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -346,7 +346,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Suv
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -356,7 +356,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Message CEO
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -366,7 +366,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Team
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -376,7 +376,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Clients
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -390,7 +390,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                       )}
                       {filteredCars === 'sedan' && (
                         <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
-                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -400,7 +400,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Sedan
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -410,7 +410,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Message CEO
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -420,7 +420,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Team
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -430,7 +430,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Clients
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -444,7 +444,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                       )}
                       {filteredCars === 'cash' && (
                         <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
-                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -454,7 +454,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             cash
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -464,7 +464,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Message CEO
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -474,7 +474,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Team
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -484,7 +484,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Clients
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -498,7 +498,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                       )}
                       {filteredCars === 'limousines' && (
                         <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
-                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -508,7 +508,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Limousines
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -518,7 +518,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Message CEO
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -528,7 +528,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Team
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -538,7 +538,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Clients
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -552,7 +552,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                       )}
                       {filteredCars === 'truck' && (
                         <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
-                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -562,7 +562,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             truck
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -572,7 +572,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Message CEO
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -582,7 +582,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Team
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -592,7 +592,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Clients
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -606,7 +606,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                       )}
                       {filteredCars === 'special' && (
                         <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
-                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -616,7 +616,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             special
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -626,7 +626,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Message CEO
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -636,7 +636,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Team
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -646,7 +646,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             </span>
                             Our Clients
                           </li>
-                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                          <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
                               <Icon
                                 icon="mini-menu-arrow-left"
@@ -661,7 +661,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                     </div>
                     <div className="relative w-full lg:hidden">
                       <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
-                        <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -671,7 +671,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Armored SUV
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -681,7 +681,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Armored Sedan
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -691,7 +691,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Cash In Transit Vehicles
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -701,7 +701,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Armored Limousines
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -711,7 +711,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Armored Pickup Truck
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -730,7 +730,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                 </div>
               </li>
               <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
-                <button className="w-full lg:text-center text-left text-lg font-semibold text-white font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block">
+                <button className="w-full lg:text-center text-left text-lg font-semibold text-black font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block">
                   Technology
                 </button>
                 <div className="group-hover:max-h-[600px] h-fit lg:bg-[#222222] duration-300 max-h-[0px] overflow-hidden transition-max-h lg:absolute top-20 -right-20 lg:min-w-[750px] lg:w-[750px] w-full flex ">
@@ -767,7 +767,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                         About Us
                       </Heading>
                       <ul className="grid lg:grid-cols-2 lg:gap-4 lg:py-6">
-                        <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -777,7 +777,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Mission & Vision
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -787,7 +787,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Message CEO
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -797,7 +797,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Our Team
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -807,7 +807,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                           </span>
                           Our Clients
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-white/90 hover:text-[#9eeb9c] transition">
+                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                           <span className="">
                             <Icon
                               icon="mini-menu-arrow-left"
@@ -828,7 +828,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
               <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
                 <Link
                   to="/faqs"
-                  className="w-full lg:text-center text-left text-lg font-semibold text-white font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block"
+                  className="w-full lg:text-center text-left text-lg font-semibold text-black font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block"
                 >
                   FAQs
                 </Link>
@@ -837,13 +837,13 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
             <div className="w-full lg:w-auto flex flex-col items-center gap-4">
               <Button
                 label="Contact Us"
-                variant="primary"
+                variant="secondary"
                 onClick={() => toggleCancel('Contact Us')}
                 otherClasses="w-full lg:w-fit "
               />
               <a
                 href="mailto:info@pakarmoring.com"
-                className="flex items-center gap-2 text-white font-semibold font-Exo2 lg:hidden"
+                className="flex items-center gap-2 text-black font-semibold font-Exo2 lg:hidden"
               >
                 <Icon
                   icon="white-navbar-email-icon"
@@ -860,19 +860,19 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
           >
             <span
               className={clsx(
-                'w-5 h-[2px] bg-white rounded-[2px] block duration-300 transition',
+                'w-5 h-[2px] bg-black rounded-[2px] block duration-300 transition',
                 toggleHamburger ? 'rotate-45 translate-y-[6px]' : 'rotate-0'
               )}
             ></span>
             <span
               className={clsx(
-                'w-5 h-[2px] bg-white rounded-[2px] block duration-300 transition',
+                'w-5 h-[2px] bg-black rounded-[2px] block duration-300 transition',
                 toggleHamburger ? 'translate-x-6' : 'translate-x-0'
               )}
             ></span>
             <span
               className={clsx(
-                'w-5 h-[2px] bg-white rounded-[2px] block duration-300 transition',
+                'w-5 h-[2px] bg-black rounded-[2px] block duration-300 transition',
                 toggleHamburger ? '-rotate-45 -translate-y-[6px]' : ''
               )}
             ></span>
