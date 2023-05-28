@@ -5,13 +5,13 @@ import Icon from '../Icon/Icon'
 import Heading from '../Heading/Heading'
 import Button from '../Button/Button'
 
-function encode(data) {
-  const formData = new FormData()
-  for (const key of Object.keys(data)) {
-    formData.append(key, data[key])
-  }
-  return formData
-}
+// function encode(data) {
+//   const formData = new FormData()
+//   for (const key of Object.keys(data)) {
+//     formData.append(key, data[key])
+//   }
+//   return formData
+// }
 
 export const ContactForm = ({
   otherClasses,
@@ -24,35 +24,35 @@ export const ContactForm = ({
     'bg-white relative trasnition-width duration-500'
   )
 
-  const messageRef = useRef('')
-  const [state, setState] = useState({})
+  // const messageRef = useRef('')
+  // const [state, setState] = useState({})
 
-  const handleChange = (e) => {
-    setState((state) => ({
-      ...state,
-      [e.target.name]: e.target.value,
-    }))
-  }
+  // const handleChange = (e) => {
+  //   setState((state) => ({
+  //     ...state,
+  //     [e.target.name]: e.target.value,
+  //   }))
+  // }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    const form = e.target
-    try {
-      await fetch('/', {
-        method: 'POST',
-        body: encode({
-          'form-name': form.getAttribute('name'),
-          ...state,
-        }),
-      })
-      messageRef.current.innerHTML =
-        'Thank you for for submission! We will get in touch with you shortly.'
-      setState({})
-      form.reset()
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   const form = e.target
+  //   try {
+  //     await fetch('/', {
+  //       method: 'POST',
+  //       body: encode({
+  //         'form-name': form.getAttribute('name'),
+  //         ...state,
+  //       }),
+  //     })
+  //     messageRef.current.innerHTML =
+  //       'Thank you for for submission! We will get in touch with you shortly.'
+  //     setState({})
+  //     form.reset()
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
 
   return (
     <div className={contactFormClasses} data-testid="contact-form">
@@ -88,18 +88,19 @@ export const ContactForm = ({
             Contact Us
           </Heading>
           <form
-            method="post"
-            onSubmit={handleSubmit}
-            action=""
-            data-netlify="true"
-            // netlify
             name="Contact Us"
+            method="post"
+            data-netlify="true"
+            onSubmit="submit"
+            action=""
+            data-netlify-honeypot="bot-field"
             className={clsx('w-full mt-5 md:mt-8')}
           >
-            <p
+            <input type="hidden" name="form-name" value="contact v2" />
+            {/* <p
               className="font-Work-Sans text-gray-800  text-base font-bold mb-4"
               ref={messageRef}
-            ></p>
+            ></p> */}
 
             <div className="mb-6">
               <label
@@ -113,7 +114,7 @@ export const ContactForm = ({
                 id="name"
                 required
                 type="text"
-                onChange={handleChange}
+                // onChange={handleChange}
                 className="w-full border-[1px] pl-4 font-Work-Sans border-gray_300 rounded-[2px] h-12 mt-2 focus:border-primary_blue_600 outline-offset-2 outline-[3px] outline-[#B6CFE1]"
               />
             </div>
@@ -129,7 +130,7 @@ export const ContactForm = ({
                   name="phone"
                   id="phone"
                   required
-                  onChange={handleChange}
+                  // onChange={handleChange}
                   type="text"
                   className="w-full border-[1px] pl-4 font-Work-Sans border-gray_300 rounded-[2px] h-12 mt-2 focus:border-primary_blue_600 outline-offset-2 outline-[3px] outline-[#B6CFE1]"
                 />
@@ -145,7 +146,7 @@ export const ContactForm = ({
                   name="email"
                   id="email"
                   type="email"
-                  onChange={handleChange}
+                  // onChange={handleChange}
                   className="w-full border-[1px] pl-4 font-Work-Sans border-gray_300 rounded-[2px] h-12 mt-2 focus:border-primary_blue_600 outline-offset-2 outline-[3px] outline-[#B6CFE1]"
                 />
               </div>
@@ -160,7 +161,7 @@ export const ContactForm = ({
               <select
                 id="option"
                 type="text"
-                onChange={handleChange}
+                // onChange={handleChange}
                 name="What Can We Help You With?"
                 className="w-full border-[1px]  border-gray_300 flex justify-between px-4 h-12 items-center rounded-sm  text-base font-normal font-Work-Sans focus:ring-0 focus:border-primary_blue_600  focus:border-[1px] focus:outline-offset-2 focus:outline-[3px] focus:outline-[#B6CFE1]"
               >
@@ -186,7 +187,7 @@ export const ContactForm = ({
               </label>
               <textarea
                 type="text"
-                onChange={handleChange}
+                // onChange={handleChange}
                 name="description"
                 id="description"
                 cols="30"
