@@ -92,7 +92,6 @@ export const ContactForm = ({
             method="post"
             data-netlify="true"
             onSubmit="submit"
-            action=""
             data-netlify-honeypot="bot-field"
             className={clsx('w-full mt-5 md:mt-8')}
           >
