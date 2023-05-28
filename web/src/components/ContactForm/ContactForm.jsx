@@ -87,7 +87,7 @@ export const ContactForm = ({
           >
             Contact Us
           </Heading>
-          <form
+          {/* <form
             name="Contact Us"
             method="post"
             data-netlify="true"
@@ -194,6 +194,18 @@ export const ContactForm = ({
               ></textarea>
             </div>
             <Button variant="secondary" label="Submit" />
+          </form> */}
+          <form name="Contact Form" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="Contact Form" />
+            <div>
+              <label>Your Email:</label>
+              <input type="email" className="border-[1px]" name="email" />
+            </div>
+            <div>
+              <label>Message:</label>
+              <textarea className="border-[1px]" name="message" />
+            </div>
+            <button type="submit">Send</button>
           </form>
         </div>
       </div>
