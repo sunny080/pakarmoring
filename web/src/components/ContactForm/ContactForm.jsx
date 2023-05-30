@@ -5,13 +5,6 @@ import Icon from '../Icon/Icon'
 import Heading from '../Heading/Heading'
 import Button from '../Button/Button'
 
-function encode(data) {
-  const formData = new FormData()
-  for (const key of Object.keys(data)) {
-    formData.append(key, data[key])
-  }
-  return formData
-}
 
 export const ContactForm = ({
   otherClasses,
@@ -24,6 +17,13 @@ export const ContactForm = ({
     'bg-white relative trasnition-width duration-500'
   )
 
+  function encode(data) {
+    const formData = new FormData()
+    for (const key of Object.keys(data)) {
+      formData.append(key, data[key])
+    }
+    return formData
+  }
   const messageRef = useRef('')
   const [state, setState] = useState({})
 
@@ -88,13 +88,13 @@ export const ContactForm = ({
             Contact Us
           </Heading>
           <form
-            method="post"
             action=""
             className={clsx('w-full mt-5 md:mt-8')}
-            data-netlify="true"
+            data-netlify={true}
             // netlify
             name="Contact Us"
             onSubmit={handleSubmit}
+            method="post"
           >
             <input type="hidden" name="form-name" value="Contact Us" />
             <p
