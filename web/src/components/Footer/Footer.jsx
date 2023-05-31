@@ -7,9 +7,52 @@ import logo from '../../images/logo.png'
 import twitterLogo from '../../images/portfolio-icons/twitter-white-icon.svg'
 import Icon from '../Icon/Icon'
 import { Link } from 'gatsby'
+import { useRef } from 'react'
+import { useState } from 'react'
 
+function encode(data) {
+  const formData = new FormData()
+  for (const key of Object.keys(data)) {
+    formData.append(key, data[key])
+  }
+  return formData
+}
 export const Footer = ({ otherClasses }) => {
   const footerClasses = clsx(otherClasses, 'w-full')
+
+  const messageRef = useRef('')
+  const [state, setState] = useState({})
+
+  const handleChange = (e) => {
+    setState((state) => ({
+      ...state,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const form = e.target
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        body: encode({
+          'form-name': form.getAttribute('name'),
+          ...state,
+        }),
+      })
+      console.log(response)
+      const { status } = response
+      if (status === 200) {
+        messageRef.current.innerHTML =
+          'Thank you for for submission! We will get in touch with you shortly.'
+        setState({})
+        form.reset()
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
     <div className={footerClasses} data-testid="footer">
@@ -40,16 +83,33 @@ export const Footer = ({ otherClasses }) => {
               By subscribing to our company newsletter you will always be
               up-to-date on our latest promotions, deals and vehicle inventory!
             </p>
-            <div className="flex flex-row">
+            <from
+              onSubmit={handleSubmit}
+              name="news-study"
+              method="post"
+              action=""
+              data-netlify="true"
+              className="flex flex-row"
+            >
+              <p
+                className="font-Work-Sans text-gray-800  text-base font-bold mb-4"
+                ref={messageRef}
+              ></p>
               <input
+                name="email"
+                id="email"
                 type="email"
+                onChange={handleChange}
                 placeholder="Enter Email"
                 className="rounded-tl-[4px] font-Open_Sans text-sm pl-2 font-medium w-full rounded-bl-[4px] outline-0"
               />
-              <button className="bg-white p-2 rounded-tr-[4px] rounded-br-[4px] text-sm leading-5 font-semibold text-black font-Exo2 hover:bg-[#bdbdbd] transition">
+              <button
+                type="submit"
+                className="bg-white p-2 rounded-tr-[4px] rounded-br-[4px] text-sm leading-5 font-semibold text-black font-Exo2 hover:bg-[#bdbdbd] transition"
+              >
                 Submit
               </button>
-            </div>
+            </from>
           </div>
           <div className="w-full flex flex-col gap-4 ">
             <Heading
