@@ -55,38 +55,38 @@ export const Layout = ({ children }) => {
   `)
   return (
     <>
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loader />
-      ) : ( */}
-      <>
-        <Navbar toggleCancel={toggleFunc} />
-        <div
-          className={clsx(
-            'fixed top-0 z-[100] h-screen text-left flex justify-end',
-            toggle === 'Contact Us' ? 'w-full' : 'w-0 overflow-hidden'
-          )}
-        >
-          <button
-            onClick={() => toggleFunc('')}
-            className="w-full h-full absolute top-0 left-0 bg-[#00000080]"
-          ></button>
-          <ContactForm
-            dropdown={nodes}
-            formType="Contact Us"
-            otherClasses={clsx(
-              toggle === 'Contact Us'
-                ? 'w-full md:w-[720px] overflow-y-auto'
-                : 'w-0 overflow-hidden'
+      ) : (
+        <>
+          <Navbar toggleCancel={toggleFunc} />
+          <div
+            className={clsx(
+              'fixed top-0 z-[100] h-screen text-left flex justify-end',
+              toggle === 'Contact Us' ? 'w-full' : 'w-0 overflow-hidden'
             )}
-            toggleCancel={toggleFunc}
-            toggleStyle={toggle}
-          />
-        </div>
+          >
+            <button
+              onClick={() => toggleFunc('')}
+              className="w-full h-full absolute top-0 left-0 bg-[#00000080]"
+            ></button>
+            <ContactForm
+              dropdown={nodes}
+              formType="Contact Us"
+              otherClasses={clsx(
+                toggle === 'Contact Us'
+                  ? 'w-full md:w-[720px] overflow-y-auto'
+                  : 'w-0 overflow-hidden'
+              )}
+              toggleCancel={toggleFunc}
+              toggleStyle={toggle}
+            />
+          </div>
 
-        <main>{childrenWithProps}</main>
-        <Footer />
-      </>
-      {/* )} */}
+          <main>{childrenWithProps}</main>
+          <Footer />
+        </>
+      )}
     </>
   )
 }

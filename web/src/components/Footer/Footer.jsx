@@ -84,17 +84,12 @@ export const Footer = ({ otherClasses }) => {
               up-to-date on our latest promotions, deals and vehicle inventory!
             </p>
             <form
-              data-netlify="true"
               onSubmit={handleSubmit}
               name="news-study"
               method="post"
               action=""
               className="flex flex-row"
             >
-              <p
-                className="font-Work-Sans text-gray-800  text-base font-bold mb-4"
-                ref={messageRef}
-              ></p>
               <input
                 name="email"
                 id="email"
@@ -110,6 +105,10 @@ export const Footer = ({ otherClasses }) => {
                 Submit
               </button>
             </form>
+            <p
+              className="font-Work-Sans text-white  text-base font-bold mb-4"
+              ref={messageRef}
+            ></p>
           </div>
           <div className="w-full flex flex-col gap-4 ">
             <Heading
