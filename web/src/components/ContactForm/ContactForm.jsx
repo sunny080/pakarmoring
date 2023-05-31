@@ -91,7 +91,6 @@ export const ContactForm = ({
             Contact Us
           </Heading>
           <form
-            data-netlify="true"
             onSubmit={handleSubmit}
             name="Contact Us"
             method="post"
