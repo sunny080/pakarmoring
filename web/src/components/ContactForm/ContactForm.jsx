@@ -5,6 +5,13 @@ import Icon from '../Icon/Icon'
 import Heading from '../Heading/Heading'
 import Button from '../Button/Button'
 
+function encode(data) {
+  const formData = new FormData()
+  for (const key of Object.keys(data)) {
+    formData.append(key, data[key])
+  }
+  return formData
+}
 
 export const ContactForm = ({
   otherClasses,
@@ -16,14 +23,6 @@ export const ContactForm = ({
     otherClasses,
     'bg-white relative trasnition-width duration-500'
   )
-
-  function encode(data) {
-    const formData = new FormData()
-    for (const key of Object.keys(data)) {
-      formData.append(key, data[key])
-    }
-    return formData
-  }
   const messageRef = useRef('')
   const [state, setState] = useState({})
 
@@ -38,17 +37,21 @@ export const ContactForm = ({
     e.preventDefault()
     const form = e.target
     try {
-      await fetch('/', {
+      const response = await fetch('/', {
         method: 'POST',
         body: encode({
           'form-name': form.getAttribute('name'),
           ...state,
         }),
       })
-      messageRef.current.innerHTML =
-        'Thank you for for submission! We will get in touch with you shortly.'
-      setState({})
-      form.reset()
+      console.log(response)
+      const { status } = response
+      if (status === 200) {
+        messageRef.current.innerHTML =
+          'Thank you for for submission! We will get in touch with you shortly.'
+        setState({})
+        form.reset()
+      }
     } catch (error) {
       console.error(error)
     }
@@ -88,13 +91,12 @@ export const ContactForm = ({
             Contact Us
           </Heading>
           <form
+            data-netlify="true"
+            onSubmit={handleSubmit}
+            name="Contact Us"
+            method="post"
             action=""
             className={clsx('w-full mt-5 md:mt-8')}
-            data-netlify={true}
-            // netlify
-            name="Contact Us"
-            onSubmit={handleSubmit}
-            method="post"
           >
             <input type="hidden" name="form-name" value="Contact Us" />
             <p
