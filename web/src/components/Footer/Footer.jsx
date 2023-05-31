@@ -83,12 +83,12 @@ export const Footer = ({ otherClasses }) => {
               By subscribing to our company newsletter you will always be
               up-to-date on our latest promotions, deals and vehicle inventory!
             </p>
-            <from
+            <form
+              data-netlify="true"
               onSubmit={handleSubmit}
               name="news-study"
               method="post"
               action=""
-              data-netlify="true"
               className="flex flex-row"
             >
               <p
@@ -109,7 +109,7 @@ export const Footer = ({ otherClasses }) => {
               >
                 Submit
               </button>
-            </from>
+            </form>
           </div>
           <div className="w-full flex flex-col gap-4 ">
             <Heading
