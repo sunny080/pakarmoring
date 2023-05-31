@@ -6,6 +6,7 @@ import FeaturedCarsSection from '../../sections/FeaturedCarsSection/FeaturedCars
 import OurClientSection from '../../sections/OurClientSection/OurClientSection'
 import MiniHeroSection from '../../sections/MiniHeroSection/MiniHeroSection'
 import FaqSection from '../../sections/FaqSection/FaqSection'
+import TechnologySection from '../../sections/TechnologySection/TechnologySection'
 
 const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
@@ -32,6 +33,10 @@ const EntryRenderer = ({ pageBuilderData, ...props }) => {
         return <MiniHeroSection key={__typename} {...sectionData} {...props} />
       case 'SanityFaqSections':
         return <FaqSection key={__typename} {...sectionData} {...props} />
+      case 'SanityTechnologySection':
+        return (
+          <TechnologySection key={__typename} {...sectionData} {...props} />
+        )
 
       default:
         return null

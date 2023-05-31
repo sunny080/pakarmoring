@@ -110,6 +110,16 @@ export default {
           },
           to: [{type: 'miniHeroSection'}],
         },
+        {
+          title: 'Technology Section',
+          name: 'technologySection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'technologySection'}],
+        },
       ],
     },
   ],

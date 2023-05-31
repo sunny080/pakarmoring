@@ -10,6 +10,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Action',
+      name: 'action',
+      type: 'string',
+      options: {
+        list: ['video', 'image'],
+      },
+      initialValue: 'video',
+    },
+    {
       title: 'Title',
       name: 'title',
       type: 'string',
@@ -28,6 +37,18 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Desktop Image',
+      name: 'desktopImage',
+      type: 'customImage',
+      hidden: ({parent}) => !parent?.action || parent?.action === 'video',
+    },
+    {
+      title: 'Mobile Image',
+      name: 'mobileImage',
+      type: 'customImage',
+      hidden: ({parent}) => !parent?.action || parent?.action === 'video',
+    },
+    {
       name: 'url',
       title: 'Url',
       type: 'url',
@@ -37,6 +58,7 @@ export default {
           allowRelative: true,
           scheme: ['http', 'https', 'mailto', 'tel'],
         }),
+      hidden: ({parent}) => !parent?.action || parent?.action === 'image',
     },
     {
       title: 'Describtion',
@@ -48,10 +70,12 @@ export default {
   preview: {
     select: {
       title: 'identifier',
+      media: 'mobileImage',
     },
-    prepare({title = 'No title'}) {
+    prepare({title = 'No title', media}) {
       return {
         title,
+        media,
       }
     },
   },

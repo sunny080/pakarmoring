@@ -729,7 +729,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                   </div>
                 </div>
               </li>
-              <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
+              {/* <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
                 <button className="w-full lg:text-center text-left text-lg font-semibold text-black font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block">
                   Technology
                 </button>
@@ -824,6 +824,14 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                     </p>
                   </div>
                 </div>
+              </li> */}
+              <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
+                <Link
+                  to="/technology"
+                  className="w-full lg:text-center text-left text-lg font-semibold text-black font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block"
+                >
+                  Technology
+                </Link>
               </li>
               <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
                 <Link

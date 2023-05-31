@@ -7,9 +7,13 @@ import miniHeroSection from './documents/miniHeroSection'
 import ourClientSection from './documents/ourClientSection'
 import pages from './documents/pages'
 import specialCardsIntroSection from './documents/specialCardsIntroSection'
+import technologySection from './documents/technologySection'
+import twoColumnGenericSections from './documents/twoColumnGenericSections'
+import twoColumnHeroes from './documents/twoColumnHeroes'
 import bodyPortableText from './objects/bodyPortableText'
 import button from './objects/button'
 import faqObject from './objects/faqObject'
+import genericSectionFields from './objects/genericSectionFields'
 import heroObject from './objects/heroObject'
 import iframe from './objects/iframe'
 import image from './objects/image'
@@ -28,6 +32,9 @@ export const schemaTypes = [
   ourClientSection,
   miniHeroSection,
   faqSection,
+  technologySection,
+  twoColumnGenericSections,
+  twoColumnHeroes,
   //  Objects
   bodyPortableText,
   button,
@@ -38,4 +45,5 @@ export const schemaTypes = [
   specialCardsIntroObject,
   ourClientObject,
   faqObject,
+  genericSectionFields,
 ]
