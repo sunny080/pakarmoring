@@ -10,7 +10,7 @@ export const Slider = ({
   children,
   customSettings,
   customClass,
-  ref,
+  refs,
 }) => {
   const sliderClasses = clsx(otherClasses)
 
@@ -24,7 +24,7 @@ export const Slider = ({
   }
   return (
     <div className={sliderClasses} data-testid="slider">
-      <SliderSection {...settings} className={customClass} ref={ref}>
+      <SliderSection {...settings} className={customClass} ref={refs}>
         {children}
       </SliderSection>
     </div>

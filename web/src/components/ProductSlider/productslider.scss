@@ -1,0 +1,43 @@
+.slider_arrow_container {
+  span {
+    height: 24px;
+    width: 24px;
+    display: block;
+    background: white;
+    mask-image: url('../../images/portfolio-icons/arrow-left-white-icon.svg');
+    -webkit-mask-image: url('../../images/portfolio-icons/arrow-left-white-icon.svg');
+  }
+}
+
+.slider_product_container {
+  button {
+    opacity: 0;
+  }
+  &:hover {
+    button {
+      opacity: 1;
+    }
+  }
+}
+
+.product_real_slider_container {
+  > .slick-list .slick-track {
+    .slick-slide {
+      > div > div > div > div {
+        background: #155214;
+        img {
+          transition: 0.3s;
+          opacity: 1 !important;
+        }
+      }
+    }
+    .slick-current {
+      > div > div > div > div {
+        background: #155214;
+        img {
+          opacity: 0.6 !important;
+        }
+      }
+    }
+  }
+}

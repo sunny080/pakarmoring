@@ -1,0 +1,44 @@
+.animated_box_main_container {
+  > svg {
+    image-rendering: -webkit-optimize-contrast;
+    transform: unset !important;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.procduct_hero_rich_text {
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    color: #353535;
+  }
+  ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 16px;
+    li {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 8px;
+      font-weight: 400;
+      font-family: 'Open Sans', sans-serif;
+      color: #353535;
+    }
+  }
+  ol {
+    list-style: number;
+    padding-left: 20px;
+    margin-top: 16px;
+    li {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 8px;
+      font-weight: 400;
+      font-family: 'Open Sans', sans-serif;
+      color: #353535;
+    }
+  }
+}
