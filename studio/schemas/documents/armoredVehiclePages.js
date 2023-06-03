@@ -53,6 +53,23 @@ export default {
       type: 'boolean',
       initialValue: false,
     },
+    {
+      name: 'pageBuilder',
+      type: 'array',
+      title: 'Page Builder',
+      of: [
+        {
+          title: 'Product Section Hero',
+          name: 'productSectionHero',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'productSectionHero'}],
+        },
+      ],
+    },
   ],
   preview: {
     select: {

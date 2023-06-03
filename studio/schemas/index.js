@@ -6,6 +6,7 @@ import introSection from './documents/introSection'
 import miniHeroSection from './documents/miniHeroSection'
 import ourClientSection from './documents/ourClientSection'
 import pages from './documents/pages'
+import productSectionHero from './documents/productSectionHero'
 import specialCardsIntroSection from './documents/specialCardsIntroSection'
 import technologySection from './documents/technologySection'
 import twoColumnGenericSections from './documents/twoColumnGenericSections'
@@ -18,6 +19,8 @@ import heroObject from './objects/heroObject'
 import iframe from './objects/iframe'
 import image from './objects/image'
 import ourClientObject from './objects/ourClientObject'
+import productSliderImagesObject from './objects/productSliderImagesObject'
+import productSpecificationObject from './objects/productSpecificationObject'
 import specialCardsIntroObject from './objects/specialCardsIntroObject'
 import youtube from './objects/youtube'
 
@@ -35,6 +38,7 @@ export const schemaTypes = [
   technologySection,
   twoColumnGenericSections,
   twoColumnHeroes,
+  productSectionHero,
   //  Objects
   bodyPortableText,
   button,
@@ -46,4 +50,6 @@ export const schemaTypes = [
   ourClientObject,
   faqObject,
   genericSectionFields,
+  productSpecificationObject,
+  productSliderImagesObject,
 ]
