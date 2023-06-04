@@ -104,8 +104,8 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                     </Heading>
                     <p className="mt-5 font-Open_Sans text-[13px] text-white/40 ">
                       Pak Armoring Vehicle Manufacturing, a leading division of
-                      INKAS® Group of Companies, which specializes in the design
-                      and production of a wide range of...
+                      Pak Armoring® Group of Companies, which specializes in the
+                      design and production of a wide range of...
                     </p>
                     <Button
                       label="Explore"

@@ -120,6 +120,16 @@ export default {
           },
           to: [{type: 'technologySection'}],
         },
+        {
+          title: 'About Hero Section',
+          name: 'aboutHeroSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'aboutHeroSection'}],
+        },
       ],
     },
   ],

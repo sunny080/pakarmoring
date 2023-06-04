@@ -1,3 +1,4 @@
+import aboutHeroSection from './documents/aboutHeroSection'
 import armoredVehiclePages from './documents/armoredVehiclePages'
 import faqSection from './documents/faqSection'
 import featuredCarsSection from './documents/featuredCarsSection'
@@ -39,6 +40,7 @@ export const schemaTypes = [
   twoColumnGenericSections,
   twoColumnHeroes,
   productSectionHero,
+  aboutHeroSection,
   //  Objects
   bodyPortableText,
   button,
