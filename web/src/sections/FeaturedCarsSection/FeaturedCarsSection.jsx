@@ -50,7 +50,7 @@ export const FeaturedCarsSection = ({ otherClasses, heading, _rawSubText }) => {
     allSanityArmoredVehiclePages: { nodes },
   } = useStaticQuery(graphql`
     query dropDown {
-      allSanityArmoredVehiclePages {
+      allSanityArmoredVehiclePages(filter: { isFeautred: { eq: true } }) {
         nodes {
           heading
           image {

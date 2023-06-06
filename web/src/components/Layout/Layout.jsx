@@ -45,21 +45,27 @@ export const Layout = ({ children }) => {
   const {
     allSanityArmoredVehiclePages: { nodes },
   } = useStaticQuery(graphql`
-    query featuredCards {
+    query AllLink {
       allSanityArmoredVehiclePages {
         nodes {
+          action
+          title
           heading
+          slug {
+            current
+          }
         }
       }
     }
   `)
+
   return (
     <>
       {isLoading ? (
         <Loader />
       ) : (
         <>
-          <Navbar toggleCancel={toggleFunc} />
+          <Navbar toggleCancel={toggleFunc} nodes={nodes} />
           <div
             className={clsx(
               'fixed top-0 z-[100] h-screen text-left flex justify-end',

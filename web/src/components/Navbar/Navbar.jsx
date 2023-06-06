@@ -15,7 +15,7 @@ import armoredVehiclesTruckBgImage from '../../images/armored-vehicles-menu-truc
 import armoredVehiclesSpecialBgImage from '../../images/armored-vehicles-menu-special.png'
 import { hideBodyScroll, showBodyScroll } from '../../utils/helpers'
 
-export const Navbar = ({ otherClasses, toggleCancel }) => {
+export const Navbar = ({ otherClasses, toggleCancel, nodes }) => {
   const navbarClasses = clsx(
     otherClasses,
     'fixed top-0 left-0 z-20 w-full bg-white shadow-md'
@@ -26,8 +26,16 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
     setToggleHamburger(!elm)
   }
 
-  const [filteredCars, setFilteredCars] = useState('suv')
+  const [filteredCars, setFilteredCars] = useState('vip')
+
+  const vipCars = nodes.filter(({ action }) => action === filteredCars)
+
+  const [filterData, setFilterDara] = useState(vipCars)
+
   const filterByCars = (e) => {
+    const filterLoop = nodes.filter(({ action }) => action === e)
+
+    setFilterDara(filterLoop)
     setFilteredCars(e)
   }
   if (toggleHamburger) {
@@ -35,6 +43,15 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
   } else {
     showBodyScroll()
   }
+  console.log(filterData)
+
+  const states = nodes
+    .sort((a, b) => a.action.localeCompare(b.action))
+    .map(({ action }) => {
+      return action
+    })
+  const allstates = [...new Set(states)]
+
   return (
     <nav className={navbarClasses} data-testid="navbar">
       <div className="w-full max-w-[1512px] px-4 lg:px-10 xl:px-20 mx-auto ">
@@ -90,7 +107,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
             )}
           >
             <ul className="w-full lg:w-auto flex lg:flex-row flex-col lg:gap-6">
-              <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
+              {/* <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
                 <button className="w-full lg:text-center text-left text-lg font-semibold text-black font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block">
                   Company
                 </button>
@@ -184,6 +201,14 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                     </p>
                   </div>
                 </div>
+              </li> */}
+              <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
+                <Link
+                  to="/about-us"
+                  className="w-full lg:text-center text-left text-lg font-semibold text-black font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0 relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block"
+                >
+                  About Us
+                </Link>
               </li>
               <li className="relative group w-full lg:w-auto lg:h-20 flex lg:flex-row flex-col items-center">
                 <button className="w-full lg:text-center text-left text-lg font-semibold text-black font-Exo2 leading-7 py-3 border-b-[1px] lg:border-b-[0px] lg:py-0  relative after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:rounded-[2px] group-hover:after:w-full after:duration-300 after:transition-width after:hidden lg:after:block">
@@ -192,7 +217,33 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                 <div className="group-hover:max-h-[600px] h-fit lg:bg-[#222222] duration-300 max-h-[0px] overflow-hidden transition-max-h lg:absolute top-20 left-2/4 lg:translate-x-[-50%] lg:min-w-[750px] lg:w-[750px] w-full flex ">
                   <div className="group-hover:delay-200 group-hover:duration-300 duration-[0.1s] opacity-0 group-hover:opacity-100 w-[30%] hidden lg:block py-5">
                     <div className="flex flex-col gap-3">
-                      <button
+                      {allstates.map((nodes) => {
+                        return (
+                          <button
+                            onMouseEnter={() => filterByCars(nodes)}
+                            className={clsx(
+                              'text-base font-Exo2 text-white flex items-center justify-end gap-0 transition-pr capitalize',
+                              filteredCars === nodes
+                                ? 'pr-4 font-bold'
+                                : 'pr-6 font-semibold'
+                            )}
+                          >
+                            {nodes}
+                            <Icon
+                              icon="mini-menu-arrow-left"
+                              otherClasses={clsx(
+                                filteredCars === nodes
+                                  ? 'opacity-100'
+                                  : 'opacity-0'
+                              )}
+                              iconHeight={24}
+                              iconWidth={24}
+                            />
+                          </button>
+                        )
+                      })}
+
+                      {/* <button
                         onMouseEnter={() => filterByCars('suv')}
                         className={clsx(
                           'text-base font-Exo2 text-white flex items-center justify-end gap-0 transition-pr',
@@ -315,26 +366,48 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                               : 'opacity-0'
                           )}
                         />
-                      </button>
+                      </button> */}
                     </div>
                   </div>
-                  <div className="group-hover:delay-200 group-hover:duration-300 duration-[0.1s] opacity-0 group-hover:opacity-100 relative w-full   lg:w-[70%] company_drop_down flex gap-6 lg:bg-black lg:p-6">
+                  <div className="group-hover:delay-200 group-hover:duration-300 duration-[0.1s] opacity-0 group-hover:opacity-100 relative w-full   lg:w-[70%] company_drop_down flex gap-6 lg:bg-black lg:px-6 lg:pt-6 lg:pb-20">
                     <img
                       src={clsx(
-                        filteredCars === 'suv' && armoredVehiclesBgImage,
-                        filteredCars === 'sedan' && armoredVehiclesSedanBgImage,
-                        filteredCars === 'cash' && armoredVehiclesCashBgImage,
-                        filteredCars === 'limousines' &&
+                        filteredCars === 'vip' && armoredVehiclesBgImage,
+                        filteredCars === 'law in forces' &&
+                          armoredVehiclesSedanBgImage,
+                        filteredCars === 'multi purpose vehicle' &&
+                          armoredVehiclesCashBgImage,
+                        filteredCars === 'guard-post' &&
                           armoredVehiclesLimuBgImage,
-                        filteredCars === 'truck' && armoredVehiclesTruckBgImage,
-                        filteredCars === 'special' &&
-                          armoredVehiclesSpecialBgImage
+                        filteredCars === 'cash and transit' &&
+                          armoredVehiclesTruckBgImage
                       )}
                       alt="company-frame"
                       className="absolute top-0 left-0 h-full w-full hidden lg:block"
                     />
                     <div className="relative w-full hidden lg:block">
-                      {filteredCars === 'suv' && (
+                      <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
+                        {filterData.map(({ title, slug: { current } }) => {
+                          return (
+                            <li>
+                              <Link
+                                to={`/${current}`}
+                                className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition"
+                              >
+                                <span className="">
+                                  <Icon
+                                    icon="mini-menu-arrow-left"
+                                    iconHeight={24}
+                                    iconWidth={24}
+                                  />
+                                </span>
+                                {title}
+                              </Link>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                      {/* {filteredCars === 'suv' && (
                         <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
                           <li className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
                             <span className="">
@@ -657,7 +730,7 @@ export const Navbar = ({ otherClasses, toggleCancel }) => {
                             PREAMBLE
                           </li>
                         </ul>
-                      )}
+                      )} */}
                     </div>
                     <div className="relative w-full lg:hidden">
                       <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">

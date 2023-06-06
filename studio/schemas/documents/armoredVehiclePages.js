@@ -36,6 +36,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Action',
+      name: 'action',
+      type: 'string',
+      options: {
+        list: ['vip', 'law in forces', 'multi purpose vehicle', 'guard-post', 'cash and transit'],
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Heading',
       name: 'heading',
       type: 'string',
