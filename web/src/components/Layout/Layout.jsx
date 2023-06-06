@@ -67,6 +67,7 @@ export const Layout = ({ children }) => {
             )}
           >
             <button
+              aria-label="button"
               onClick={() => toggleFunc('')}
               className="w-full h-full absolute top-0 left-0 bg-[#00000080]"
             ></button>

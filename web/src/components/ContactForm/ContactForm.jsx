@@ -73,10 +73,10 @@ export const ContactForm = ({
               iconWidth={24}
             />
             <a
-              href="tel:1300932584"
+              href="tel:03039234222"
               className="font-Work-Sans text-primary_blue_600 font-bold text-base tracking-[0.01em] "
             >
-              1300-932-584
+              03039234222
             </a>
           </div>
           <button onClick={() => toggleCancel()}>
@@ -86,7 +86,7 @@ export const ContactForm = ({
         <div className="pb-10 px-4 md:px-[84px] w-full mt-8">
           <Heading
             type="h3"
-            otherClasses="text-center font-Work-Sans font-semibold text-primary_heading_color mb-8"
+            otherClasses="text-center font-Exo2 font-semibold text-primary_green_600 mb-8"
           >
             Contact Us
           </Heading>
@@ -106,7 +106,7 @@ export const ContactForm = ({
             <div className="mb-6">
               <label
                 htmlFor="name"
-                className="font-Work-Sans text-sm font-semibold text-gray-800 "
+                className="font-Open_Sans text-sm font-semibold text-gray-800 "
               >
                 Name
               </label>
@@ -116,14 +116,14 @@ export const ContactForm = ({
                 required
                 type="text"
                 onChange={handleChange}
-                className="w-full border-[1px] pl-4 font-Work-Sans border-gray_300 rounded-[2px] h-12 mt-2 focus:border-primary_blue_600 outline-offset-2 outline-[3px] outline-[#B6CFE1]"
+                className="w-full border-[1px] pl-4 font-Open_Sans border-gray_300 rounded-[2px] h-12 mt-2 focus:border-primary_green_600 outline-offset-2 outline-[3px] outline-primary_green_600/30"
               />
             </div>
             <div className="mb-6 flex flex-col md:flex-row gap-5 lg:gap-[21px]">
               <div className="w-full md:w-2/4">
                 <label
                   htmlFor="phone"
-                  className="font-Work-Sans text-sm font-semibold text-gray-800 "
+                  className="font-Open_Sans text-sm font-semibold text-gray-800 "
                 >
                   Phone Number
                 </label>
@@ -133,13 +133,13 @@ export const ContactForm = ({
                   required
                   onChange={handleChange}
                   type="text"
-                  className="w-full border-[1px] pl-4 font-Work-Sans border-gray_300 rounded-[2px] h-12 mt-2 focus:border-primary_blue_600 outline-offset-2 outline-[3px] outline-[#B6CFE1]"
+                  className="w-full border-[1px] pl-4 font-Open_Sans border-gray_300 rounded-[2px] h-12 mt-2 focus:border-primary_green_600 outline-offset-2 outline-[3px] outline-primary_green_600/30"
                 />
               </div>
               <div className="w-full md:w-2/4">
                 <label
                   htmlFor="email"
-                  className="font-Work-Sans text-sm font-semibold text-gray-800  "
+                  className="font-Open_Sans text-sm font-semibold text-gray-800  "
                 >
                   Email Address
                 </label>
@@ -148,14 +148,14 @@ export const ContactForm = ({
                   id="email"
                   type="email"
                   onChange={handleChange}
-                  className="w-full border-[1px] pl-4 font-Work-Sans border-gray_300 rounded-[2px] h-12 mt-2 focus:border-primary_blue_600 outline-offset-2 outline-[3px] outline-[#B6CFE1]"
+                  className="w-full border-[1px] pl-4 font-Open_Sans border-gray_300 rounded-[2px] h-12 mt-2 focus:border-primary_green_600 outline-offset-2 outline-[3px] outline-primary_green_600/30"
                 />
               </div>
             </div>
             <div className="w-full flex flex-col gap-2 mb-6">
               <label
                 htmlFor="option"
-                className="font-Work-Sans text-sm font-semibold text-gray-800 "
+                className="font-Open_Sans text-sm font-semibold text-gray-800 "
               >
                 What Can We Help You With?
               </label>
@@ -164,7 +164,7 @@ export const ContactForm = ({
                 type="text"
                 onChange={handleChange}
                 name="What Can We Help You With?"
-                className="w-full border-[1px]  border-gray_300 flex justify-between px-4 h-12 items-center rounded-sm  text-base font-normal font-Work-Sans focus:ring-0 focus:border-primary_blue_600  focus:border-[1px] focus:outline-offset-2 focus:outline-[3px] focus:outline-[#B6CFE1]"
+                className="w-full border-[1px]  border-gray_300 flex justify-between px-4 h-12 items-center rounded-sm  text-base font-normal font-Open_Sans focus:ring-0 focus:border-primary_green_600  focus:border-[1px] focus:outline-offset-2 focus:outline-[3px] focus:outline-primary_green_600/30"
               >
                 <option value="Select one...">Select one...</option>
                 {dropdown.map(({ heading }, index) => {
@@ -182,7 +182,7 @@ export const ContactForm = ({
             <div className="w-full mb-6">
               <label
                 htmlFor="description"
-                className="font-Work-Sans text-sm font-semibold text-gray-800 "
+                className="font-Open_Sans text-sm font-semibold text-gray-800 "
               >
                 Message (optional)
               </label>
@@ -193,7 +193,7 @@ export const ContactForm = ({
                 id="description"
                 cols="30"
                 rows="10"
-                className="w-full border-[1px] font-Work-Sans pl-4 pt-4 border-gray_300 rounded-[2px] min-h-[136px] max-h-[136px] mt-2 focus:border-primary_blue_600 outline-offset-2 outline-[3px] outline-[#B6CFE1]"
+                className="w-full border-[1px] font-Open_Sans pl-4 pt-4 border-gray_300 rounded-[2px] min-h-[136px] max-h-[136px] mt-2 focus:border-primary_green_600 outline-offset-2 outline-[3px] outline-primary_green_600/30"
               ></textarea>
             </div>
             <Button variant="secondary" label="Submit" />

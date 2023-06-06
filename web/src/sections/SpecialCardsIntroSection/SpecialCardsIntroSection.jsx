@@ -2,7 +2,6 @@ import React from 'react'
 import clsx from 'clsx'
 import { Link, graphql } from 'gatsby'
 import Image from '../../components/Image/Image'
-import Heading from '../../components/Heading/Heading'
 import './specialcardintrosection.scss'
 
 export const SpecialCardsIntroSection = ({ otherClasses, cards }) => {

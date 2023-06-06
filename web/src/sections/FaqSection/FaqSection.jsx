@@ -2,9 +2,6 @@ import React from 'react'
 import clsx from 'clsx'
 import { graphql } from 'gatsby'
 import Heading from '../../components/Heading/Heading'
-import { useState } from 'react'
-import Icon from '../../components/Icon/Icon'
-import RichText from '../../components/RichText/RichText'
 import Accordion from '../../components/Accordion/Accordion'
 
 export const FaqSection = ({ otherClasses, mainHeading, cards }) => {
