@@ -142,9 +142,9 @@ export const FeaturedCarsSection = ({ otherClasses, heading, _rawSubText }) => {
             customSettings={settings}
             customClass="featured_cars_section_slider"
           >
-            {nodes.map(({ image, heading, slug: { current } }) => {
+            {nodes.map(({ image, heading, slug: { current } }, index) => {
               return (
-                <div className="w-full px-3">
+                <div key={index} className="w-full px-3">
                   <Link
                     to={`/${current}`}
                     className="flex w-full flex-col gap-4 items-start group cur"

@@ -85,10 +85,9 @@ export const ProductSlider = ({ otherClasses, data }) => {
             customSettings={settings1}
             customClass="w-full slider_product_container"
           >
-            {data.map(({ images }) => {
-              console.log(images)
+            {data.map(({ images }, index) => {
               return (
-                <div className="w-full">
+                <div className="w-full" key={index}>
                   <div className="w-full">
                     <Image
                       imgClassName="rounded-[12px]"
@@ -108,10 +107,9 @@ export const ProductSlider = ({ otherClasses, data }) => {
             customClass="w-full product_real_slider_container"
             customSettings={settings2}
           >
-            {data.map(({ images }) => {
-              console.log(images)
+            {data.map(({ images }, index) => {
               return (
-                <div className="w-full pr-2">
+                <div className="w-full pr-2" key={index}>
                   <div className="w-full">
                     <Image
                       imageData={images}

@@ -16,7 +16,7 @@ export const Loader = ({ otherClasses }) => {
         alt="logo"
         className="w-[50px] lg:w-[60px] h-[58px] lg:h-[70px] absolute left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%]"
       />
-      <div class="lds-roller">
+      <div className="lds-roller">
         <div></div>
         <div></div>
         <div></div>

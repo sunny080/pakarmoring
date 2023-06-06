@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import clsx from 'clsx'
 import './navbar.scss'
 import { Link } from 'gatsby'
@@ -43,7 +43,6 @@ export const Navbar = ({ otherClasses, toggleCancel, nodes }) => {
   } else {
     showBodyScroll()
   }
-  console.log(filterData)
 
   const states = nodes
     .sort((a, b) => a.action.localeCompare(b.action))
@@ -64,7 +63,6 @@ export const Navbar = ({ otherClasses, toggleCancel, nodes }) => {
     nodes.find(({ action }) => action === item)
   )
 
-  console.log(orderedNodes)
   return (
     <nav className={navbarClasses} data-testid="navbar">
       <div className="w-full max-w-[1512px] px-4 lg:px-10 xl:px-20 mx-auto ">
@@ -237,9 +235,9 @@ export const Navbar = ({ otherClasses, toggleCancel, nodes }) => {
                 <div className="company_drop_down group-hover:max-h-[600px] lg:group-hover:min-h-[250px] lg:min-h-[0px] h-fit lg:bg-white duration-300 max-h-[0px] overflow-hidden transition-all lg:absolute top-20 left-2/4 lg:rounded lg:translate-x-[-50%] lg:min-w-[750px] lg:w-[750px] w-full flex ">
                   <div className="group-hover:delay-200 group-hover:duration-300 duration-[0.1s] opacity-0 group-hover:opacity-100 w-[30%] hidden lg:block py-5">
                     <div className="flex flex-col gap-3">
-                      {orderedNodes.map((nodes) => {
+                      {orderedNodes.map((nodes, index) => {
                         return (
-                          <>
+                          <Fragment key={index}>
                             {nodes && (
                               <button
                                 onMouseEnter={() => filterByCars(nodes?.action)}
@@ -263,7 +261,7 @@ export const Navbar = ({ otherClasses, toggleCancel, nodes }) => {
                                 />
                               </button>
                             )}
-                          </>
+                          </Fragment>
                         )
                       })}
                     </div>
@@ -286,25 +284,27 @@ export const Navbar = ({ otherClasses, toggleCancel, nodes }) => {
                     />
                     <div className="relative w-full hidden lg:block">
                       <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
-                        {filterData.map(({ title, slug: { current } }) => {
-                          return (
-                            <li>
-                              <Link
-                                to={`/${current}`}
-                                className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-black/90 hover:text-primary_green_600 transition"
-                              >
-                                <span className="">
-                                  <Icon
-                                    icon="mini-menu-arrow-left"
-                                    iconHeight={24}
-                                    iconWidth={24}
-                                  />
-                                </span>
-                                {title}
-                              </Link>
-                            </li>
-                          )
-                        })}
+                        {filterData.map(
+                          ({ title, slug: { current } }, index) => {
+                            return (
+                              <li key={index}>
+                                <Link
+                                  to={`/${current}`}
+                                  className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-black/90 hover:text-primary_green_600 transition"
+                                >
+                                  <span className="">
+                                    <Icon
+                                      icon="mini-menu-arrow-left"
+                                      iconHeight={24}
+                                      iconWidth={24}
+                                    />
+                                  </span>
+                                  {title}
+                                </Link>
+                              </li>
+                            )
+                          }
+                        )}
                       </ul>
                       {/* {filteredCars === 'suv' && (
                         <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">

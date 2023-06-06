@@ -47,6 +47,9 @@ export const ProductHeroSection = ({
     setToggleTabs(e)
   }
 
+  console.log(_rawVehiclesOverView)
+  console.log(_rawModification)
+
   return (
     <section
       className={productHeroSectionClasses}
@@ -106,8 +109,8 @@ export const ProductHeroSection = ({
               </Heading>
             </div>
             <div className="grid sm:grid-cols-2 sm:gap-x-6 gap-4 sm:gap-y-2 ">
-              {protectionDetial.map((nodes) => {
-                return <p>{nodes}</p>
+              {protectionDetial.map((nodes, index) => {
+                return <p key={index}>{nodes}</p>
               })}
             </div>
           </div>
@@ -124,39 +127,45 @@ export const ProductHeroSection = ({
               >
                 Vehicle Overview
               </button>
-              <button
-                onClick={() => tabsFunc('enhancement')}
-                className={clsx(
-                  'px-4 py-2 text-sm font-Exo2 font-medium leading-5 whitespace-nowrap',
-                  toggleTabs === 'enhancement'
-                    ? 'bg-primary_green_600 text-white'
-                    : 'bg-[#F1F1F1]/50 text-black'
-                )}
-              >
-                Enhancement
-              </button>
-              <button
-                onClick={() => tabsFunc('modification')}
-                className={clsx(
-                  'px-4 py-2 text-sm font-Exo2 font-medium leading-5 whitespace-nowrap',
-                  toggleTabs === 'modification'
-                    ? 'bg-primary_green_600 text-white'
-                    : 'bg-[#F1F1F1]/50 text-black'
-                )}
-              >
-                Modification
-              </button>
-              <button
-                onClick={() => tabsFunc('make')}
-                className={clsx(
-                  'px-4 py-2 text-sm font-Exo2 font-medium leading-5 rounded-tr-[8px] rounded-br-[8px] whitespace-nowrap',
-                  toggleTabs === 'make'
-                    ? 'bg-primary_green_600 text-white'
-                    : 'bg-[#F1F1F1]/50 text-black'
-                )}
-              >
-                Make/Country
-              </button>
+              {_rawEnhancement && (
+                <button
+                  onClick={() => tabsFunc('enhancement')}
+                  className={clsx(
+                    'px-4 py-2 text-sm font-Exo2 font-medium leading-5 whitespace-nowrap',
+                    toggleTabs === 'enhancement'
+                      ? 'bg-primary_green_600 text-white'
+                      : 'bg-[#F1F1F1]/50 text-black'
+                  )}
+                >
+                  Enhancement
+                </button>
+              )}
+              {_rawModification && (
+                <button
+                  onClick={() => tabsFunc('modification')}
+                  className={clsx(
+                    'px-4 py-2 text-sm font-Exo2 font-medium leading-5 whitespace-nowrap',
+                    toggleTabs === 'modification'
+                      ? 'bg-primary_green_600 text-white'
+                      : 'bg-[#F1F1F1]/50 text-black'
+                  )}
+                >
+                  Modification
+                </button>
+              )}
+              {_rawMakeCountry && (
+                <button
+                  onClick={() => tabsFunc('make')}
+                  className={clsx(
+                    'px-4 py-2 text-sm font-Exo2 font-medium leading-5 rounded-tr-[8px] rounded-br-[8px] whitespace-nowrap',
+                    toggleTabs === 'make'
+                      ? 'bg-primary_green_600 text-white'
+                      : 'bg-[#F1F1F1]/50 text-black'
+                  )}
+                >
+                  Make/Country
+                </button>
+              )}
             </div>
             {toggleTabs === 'overview' && (
               <RichText
@@ -164,23 +173,35 @@ export const ProductHeroSection = ({
                 otherClasses="procduct_hero_rich_text"
               />
             )}
-            {toggleTabs === 'enhancement' && (
-              <RichText
-                richText={_rawEnhancement}
-                otherClasses="procduct_hero_rich_text"
-              />
+            {_rawEnhancement && (
+              <>
+                {toggleTabs === 'enhancement' && (
+                  <RichText
+                    richText={_rawEnhancement}
+                    otherClasses="procduct_hero_rich_text"
+                  />
+                )}
+              </>
             )}
-            {toggleTabs === 'modification' && (
-              <RichText
-                richText={_rawModification}
-                otherClasses="procduct_hero_rich_text"
-              />
+            {_rawModification && (
+              <>
+                {toggleTabs === 'modification' && (
+                  <RichText
+                    richText={_rawModification}
+                    otherClasses="procduct_hero_rich_text"
+                  />
+                )}
+              </>
             )}
-            {toggleTabs === 'make' && (
-              <RichText
-                richText={_rawMakeCountry}
-                otherClasses="procduct_hero_rich_text"
-              />
+            {_rawMakeCountry && (
+              <>
+                {toggleTabs === 'make' && (
+                  <RichText
+                    richText={_rawMakeCountry}
+                    otherClasses="procduct_hero_rich_text"
+                  />
+                )}
+              </>
             )}
           </div>
         </div>
@@ -192,9 +213,9 @@ export const ProductHeroSection = ({
             Vehicle Specification
           </Heading>
           <div className="px-4 w-full pt-6">
-            {specification.map(({ title, about }) => {
+            {specification.map(({ title, about }, index) => {
               return (
-                <div className="w-full grid grid-cols-2 mb-2">
+                <div key={index} className="w-full grid grid-cols-2 mb-2">
                   <p className="text-sm font-Exo2 font-semibold leading-5 text-black">{`${title}:`}</p>
                   <p className="text-sm font-Exo2 font-normal leading-5 text-black">
                     {about}

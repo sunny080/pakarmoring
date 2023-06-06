@@ -16,9 +16,9 @@ export const SpecialCardsIntroSection = ({ otherClasses, cards }) => {
       data-testid="special-cards-intro-section"
     >
       <div className="max-w-[1512px] w-full mx-auto px-4 lg:px-[60px] xl:px-[156px] grid sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-10 ">
-        {cards.map(({ slug: { current }, heading, image }) => {
+        {cards.map(({ slug: { current }, heading, image }, index) => {
           return (
-            <Link to={`/${current}`} className="w-full group">
+            <Link key={index} to={`/${current}`} className="w-full group">
               <Image
                 imgClassName="rounded-[4px]"
                 imageData={image}

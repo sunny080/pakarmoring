@@ -14,8 +14,8 @@ export const TechnologySection = ({ otherClasses, cards }) => {
       className={technologySectionClasses}
       data-testid="technology-section"
     >
-      {cards.map((nodes) => {
-        return <TechnologyCard {...nodes} />
+      {cards.map((nodes, index) => {
+        return <TechnologyCard key={index} {...nodes} />
       })}
     </section>
   )

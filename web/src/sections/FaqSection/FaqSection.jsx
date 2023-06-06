@@ -16,8 +16,8 @@ export const FaqSection = ({ otherClasses, mainHeading, cards }) => {
         {mainHeading}
       </Heading>
       <div className="flex flex-col gap-4 mt-10">
-        {cards.map((nodes) => {
-          return <Accordion {...nodes} />
+        {cards.map((nodes, index) => {
+          return <Accordion key={index} {...nodes} />
         })}
       </div>
     </section>

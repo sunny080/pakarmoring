@@ -71,9 +71,9 @@ export const OurClientSection = ({
       </div>
       <div className="mt-10">
         <Slider customSettings={settings}>
-          {cards.map(({ clientLogo }) => {
+          {cards.map(({ clientLogo }, index) => {
             return (
-              <div className="w-full px-2">
+              <div key={index} className="w-full px-2">
                 <Image imageData={clientLogo} otherClasses="" />
               </div>
             )

@@ -24,9 +24,9 @@ export const OurMissionSection = ({ otherClasses, cards, toggleFunc }) => {
       data-testid="our-mission-section"
     >
       <div className="w-full lg:w-2/4 flex flex-col items-start gap-2">
-        {cards.map(({ heading, _rawSubText }) => {
+        {cards.map(({ heading, _rawSubText }, index) => {
           return (
-            <div>
+            <div key={index}>
               <button
                 onClick={() => conditionFunc(heading)}
                 className={clsx(
@@ -56,9 +56,10 @@ export const OurMissionSection = ({ otherClasses, cards, toggleFunc }) => {
         />
       </div>
       <div className="w-full lg:w-2/4 lg:h-fit lg:sticky lg:top-[136px]">
-        {cards.map(({ image, heading }) => {
+        {cards.map(({ image, heading }, index) => {
           return (
             <Image
+              key={index}
               imgClassName="rounded-[12px]"
               imageData={image}
               otherClasses={clsx(
