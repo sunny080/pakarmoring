@@ -19,13 +19,11 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
-      media: 'mobileImage',
+      title: 'identifier',
     },
-    prepare({title = 'No title', media}) {
+    prepare({title = 'No title'}) {
       return {
         title,
-        media,
       }
     },
   },
