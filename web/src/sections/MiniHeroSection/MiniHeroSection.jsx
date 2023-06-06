@@ -14,6 +14,7 @@ export const MiniHeroSection = ({
   button,
   backgroundDesktopImage,
   backgroundMobileImage,
+  toggleFunc,
 }) => {
   const miniHeroSectionClasses = clsx(
     otherClasses,
@@ -41,7 +42,7 @@ export const MiniHeroSection = ({
           richText={_rawSubText}
           otherClasses="mini_hero_section_rich_text"
         />
-        <Button {...button} />
+        <Button onClick={() => toggleFunc('Contact Us')} {...button} />
       </div>
     </section>
   )

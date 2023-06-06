@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import clsx from 'clsx'
 import { graphql } from 'gatsby'
 import Heading from '../../components/Heading/Heading'
@@ -24,7 +24,7 @@ export const OurClientSection = ({
     arrows: false,
     autoplay: true,
     autoplaySpeed: 0,
-    speed: 3000,
+    speed: 2000,
     cssEase: 'linear',
     infinite: true,
     dots: false,

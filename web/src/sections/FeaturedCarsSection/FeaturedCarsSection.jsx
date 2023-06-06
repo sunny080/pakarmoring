@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import clsx from 'clsx'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Heading from '../../components/Heading/Heading'
@@ -67,9 +67,10 @@ export const FeaturedCarsSection = ({ otherClasses, heading, _rawSubText }) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 3,
     autoplay: true,
+    autoplaySpeed: 2000,
     slidesToScroll: 1,
     nextArrow: <SamplePrevArrow />,
     prevArrow: <SampleNextArrow />,
@@ -101,6 +102,22 @@ export const FeaturedCarsSection = ({ otherClasses, heading, _rawSubText }) => {
     ],
   }
 
+  const slider = useRef(null)
+
+  function scroll(e) {
+    if (slider === null) return 0
+
+    e.wheelDelta > 0 ? slider.current.slickPrev() : slider.current.slickNext()
+  }
+
+  useEffect(() => {
+    window.addEventListener('wheel', scroll, true)
+
+    return () => {
+      window.removeEventListener('wheel', scroll, true)
+    }
+  }, [])
+
   return (
     <section
       className={featuredCarsSectionClasses}
@@ -121,6 +138,7 @@ export const FeaturedCarsSection = ({ otherClasses, heading, _rawSubText }) => {
         </div>
         <div className="w-full mt-10">
           <Slider
+            refs={slider}
             customSettings={settings}
             customClass="featured_cars_section_slider"
           >
