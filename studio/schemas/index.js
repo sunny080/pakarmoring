@@ -1,11 +1,13 @@
 import aboutHeroSection from './documents/aboutHeroSection'
 import armoredVehiclePages from './documents/armoredVehiclePages'
+import ceoSection from './documents/ceoSection'
 import faqSection from './documents/faqSection'
 import featuredCarsSection from './documents/featuredCarsSection'
 import heroSection from './documents/heroSection'
 import introSection from './documents/introSection'
 import miniHeroSection from './documents/miniHeroSection'
 import ourClientSection from './documents/ourClientSection'
+import ourMissionSection from './documents/ourMissionSection'
 import pages from './documents/pages'
 import productSectionHero from './documents/productSectionHero'
 import specialCardsIntroSection from './documents/specialCardsIntroSection'
@@ -20,6 +22,7 @@ import heroObject from './objects/heroObject'
 import iframe from './objects/iframe'
 import image from './objects/image'
 import ourClientObject from './objects/ourClientObject'
+import ourMissionObject from './objects/ourMissionObject'
 import productSliderImagesObject from './objects/productSliderImagesObject'
 import productSpecificationObject from './objects/productSpecificationObject'
 import specialCardsIntroObject from './objects/specialCardsIntroObject'
@@ -41,6 +44,8 @@ export const schemaTypes = [
   twoColumnHeroes,
   productSectionHero,
   aboutHeroSection,
+  ceoSection,
+  ourMissionSection,
   //  Objects
   bodyPortableText,
   button,
@@ -54,4 +59,5 @@ export const schemaTypes = [
   genericSectionFields,
   productSpecificationObject,
   productSliderImagesObject,
+  ourMissionObject,
 ]

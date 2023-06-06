@@ -130,6 +130,26 @@ export default {
           },
           to: [{type: 'aboutHeroSection'}],
         },
+        {
+          title: 'Ceo Section',
+          name: 'ceoSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'ceoSection'}],
+        },
+        {
+          title: 'Our Mission Section',
+          name: 'ourMissionSection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'ourMissionSection'}],
+        },
       ],
     },
   ],
