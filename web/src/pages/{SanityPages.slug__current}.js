@@ -38,6 +38,7 @@ export const query = graphql`
         ...AboutUsHeroSection
         ...CeoSection
         ...OurMissionSection
+        ...AllPorductSection
       }
     }
   }

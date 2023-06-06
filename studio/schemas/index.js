@@ -1,4 +1,5 @@
 import aboutHeroSection from './documents/aboutHeroSection'
+import allProductsReference from './documents/allProductsReference'
 import armoredVehiclePages from './documents/armoredVehiclePages'
 import ceoSection from './documents/ceoSection'
 import faqSection from './documents/faqSection'
@@ -46,6 +47,7 @@ export const schemaTypes = [
   aboutHeroSection,
   ceoSection,
   ourMissionSection,
+  allProductsReference,
   //  Objects
   bodyPortableText,
   button,

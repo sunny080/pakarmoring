@@ -150,6 +150,16 @@ export default {
           },
           to: [{type: 'ourMissionSection'}],
         },
+        {
+          title: 'All Products Reference',
+          name: 'allProductsReference',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'allProductsReference'}],
+        },
       ],
     },
   ],
