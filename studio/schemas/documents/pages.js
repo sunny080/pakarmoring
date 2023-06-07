@@ -160,6 +160,16 @@ export default {
           },
           to: [{type: 'allProductsReference'}],
         },
+        {
+          title: 'Ballistic Protection',
+          name: 'ballisticProtection',
+          type: 'reference',
+          validation: (Rule) => Rule.required(),
+          options: {
+            disableNew: true,
+          },
+          to: [{type: 'ballisticProtection'}],
+        },
       ],
     },
   ],

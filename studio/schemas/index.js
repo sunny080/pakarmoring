@@ -1,6 +1,7 @@
 import aboutHeroSection from './documents/aboutHeroSection'
 import allProductsReference from './documents/allProductsReference'
 import armoredVehiclePages from './documents/armoredVehiclePages'
+import ballisticProtection from './documents/ballisticProtection'
 import ceoSection from './documents/ceoSection'
 import faqSection from './documents/faqSection'
 import featuredCarsSection from './documents/featuredCarsSection'
@@ -15,6 +16,7 @@ import specialCardsIntroSection from './documents/specialCardsIntroSection'
 import technologySection from './documents/technologySection'
 import twoColumnGenericSections from './documents/twoColumnGenericSections'
 import twoColumnHeroes from './documents/twoColumnHeroes'
+import ballisticProtectionObject from './objects/ballisticProtectionObject'
 import bodyPortableText from './objects/bodyPortableText'
 import button from './objects/button'
 import faqObject from './objects/faqObject'
@@ -48,8 +50,10 @@ export const schemaTypes = [
   ceoSection,
   ourMissionSection,
   allProductsReference,
+  ballisticProtection,
   //  Objects
   bodyPortableText,
+  ballisticProtectionObject,
   button,
   iframe,
   image,

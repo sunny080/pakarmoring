@@ -38,11 +38,15 @@ export const MiniHeroSection = ({
         >
           {heading}
         </Heading>
-        <RichText
-          richText={_rawSubText}
-          otherClasses="mini_hero_section_rich_text"
-        />
-        <Button onClick={() => toggleFunc('Contact Us')} {...button} />
+        {_rawSubText && (
+          <RichText
+            richText={_rawSubText}
+            otherClasses="mini_hero_section_rich_text"
+          />
+        )}
+        {button?.lable && (
+          <Button onClick={() => toggleFunc('Contact Us')} {...button} />
+        )}
       </div>
     </section>
   )

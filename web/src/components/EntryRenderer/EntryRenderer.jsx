@@ -12,6 +12,7 @@ import AboutUsHeroSection from '../../sections/AboutUsHeroSection/AboutUsHeroSec
 import CeoSection from '../../sections/CeoSection/CeoSection'
 import OurMissionSection from '../../sections/OurMissionSection/OurMissionSection'
 import AllProductSection from '../../sections/AllProductSection/AllProductSection'
+import BallisticProtectionSection from '../../sections/BallisticProtectionSection/BallisticProtectionSection'
 
 const EntryRenderer = ({ pageBuilderData, ...props }) => {
   return pageBuilderData.map(({ __typename, ...sectionData }, index) => {
@@ -59,6 +60,14 @@ const EntryRenderer = ({ pageBuilderData, ...props }) => {
       case 'SanityAllProductsReference':
         return (
           <AllProductSection key={__typename} {...sectionData} {...props} />
+        )
+      case 'SanityBallisticProtection':
+        return (
+          <BallisticProtectionSection
+            key={__typename}
+            {...sectionData}
+            {...props}
+          />
         )
 
       default:

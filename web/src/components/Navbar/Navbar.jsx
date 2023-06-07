@@ -264,6 +264,27 @@ export const Navbar = ({ otherClasses, toggleCancel, nodes }) => {
                           </Fragment>
                         )
                       })}
+                      <button
+                        onMouseEnter={() => filterByCars('ballistic')}
+                        className={clsx(
+                          'text-base font-Exo2 text-black flex items-center justify-end gap-0 transition-pr capitalize',
+                          filteredCars === 'ballistic'
+                            ? 'pr-4 font-bold'
+                            : 'pr-6 font-semibold'
+                        )}
+                      >
+                        Ballistic standard
+                        <Icon
+                          icon="mini-menu-arrow-left"
+                          otherClasses={clsx(
+                            filteredCars === 'ballistic'
+                              ? 'opacity-100'
+                              : 'opacity-0'
+                          )}
+                          iconHeight={24}
+                          iconWidth={24}
+                        />
+                      </button>
                     </div>
                   </div>
                   <div className="group-hover:delay-200 group-hover:duration-300 duration-[0.1s] opacity-0 group-hover:opacity-100 relative w-full   lg:w-[70%] flex gap-6 lg:bg-white lg:px-6 lg:pt-6 lg:pb-20">
@@ -277,33 +298,55 @@ export const Navbar = ({ otherClasses, toggleCancel, nodes }) => {
                         filteredCars === 'guard-post' &&
                           armoredVehiclesLimuBgImage,
                         filteredCars === 'cash and transit' &&
-                          armoredVehiclesTruckBgImage
+                          armoredVehiclesTruckBgImage,
+                        filteredCars === 'ballistic' &&
+                          armoredVehiclesCashBgImage
                       )}
                       alt="company-frame"
                       className="absolute top-0 left-0 h-full w-full hidden lg:block"
                     />
                     <div className="relative w-full hidden lg:block">
                       <ul className="grid lg:grid-cols-2 lg:gap-4 lg:pb-6">
-                        {filterData.map(
-                          ({ title, slug: { current } }, index) => {
-                            return (
-                              <li key={index}>
-                                <Link
-                                  to={`/${current}`}
-                                  className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-black/90 hover:text-primary_green_600 transition"
-                                >
-                                  <span className="">
-                                    <Icon
-                                      icon="mini-menu-arrow-left"
-                                      iconHeight={24}
-                                      iconWidth={24}
-                                    />
-                                  </span>
-                                  {title}
-                                </Link>
-                              </li>
-                            )
-                          }
+                        {filteredCars === 'ballistic' ? (
+                          <li>
+                            <Link
+                              to={`/ballistic-protection`}
+                              className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-black/90 hover:text-primary_green_600 transition"
+                            >
+                              <span className="">
+                                <Icon
+                                  icon="mini-menu-arrow-left"
+                                  iconHeight={24}
+                                  iconWidth={24}
+                                />
+                              </span>
+                              Ballistic Standards
+                            </Link>
+                          </li>
+                        ) : (
+                          <>
+                            {filterData.map(
+                              ({ title, slug: { current } }, index) => {
+                                return (
+                                  <li key={index}>
+                                    <Link
+                                      to={`/${current}`}
+                                      className="flex items-center gap-2 text-base font-normal border-b-[1px] border-b-white lg:border-b-[0px] leading-6 py-3 lg:py-0 font-Exo2 text-black/70 lg:text-black/90 hover:text-primary_green_600 transition"
+                                    >
+                                      <span className="">
+                                        <Icon
+                                          icon="mini-menu-arrow-left"
+                                          iconHeight={24}
+                                          iconWidth={24}
+                                        />
+                                      </span>
+                                      {title}
+                                    </Link>
+                                  </li>
+                                )
+                              }
+                            )}
+                          </>
                         )}
                       </ul>
                     </div>
@@ -324,55 +367,65 @@ export const Navbar = ({ otherClasses, toggleCancel, nodes }) => {
                             Vip
                           </Link>
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
-                          <span className="">
-                            <Icon
-                              icon="mini-menu-arrow-left"
-                              iconHeight={24}
-                              iconWidth={24}
-                            />
-                          </span>
-                          Armored Sedan
+                        <li className="">
+                          <Link
+                            to="/law-in-forces"
+                            className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition"
+                          >
+                            <span className="">
+                              <Icon
+                                icon="mini-menu-arrow-left"
+                                iconHeight={24}
+                                iconWidth={24}
+                              />
+                            </span>
+                            Law In Forces
+                          </Link>
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
-                          <span className="">
-                            <Icon
-                              icon="mini-menu-arrow-left"
-                              iconHeight={24}
-                              iconWidth={24}
-                            />
-                          </span>
-                          Cash In Transit Vehicles
+                        <li className="">
+                          <Link
+                            to="/multi-purpose-vehicle"
+                            className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition"
+                          >
+                            <span className="">
+                              <Icon
+                                icon="mini-menu-arrow-left"
+                                iconHeight={24}
+                                iconWidth={24}
+                              />
+                            </span>
+                            Multi Purpose Vehicle
+                          </Link>
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
-                          <span className="">
-                            <Icon
-                              icon="mini-menu-arrow-left"
-                              iconHeight={24}
-                              iconWidth={24}
-                            />
-                          </span>
-                          Armored Limousines
+                        <li className="">
+                          <Link
+                            to="/guard-post"
+                            className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition"
+                          >
+                            <span className="">
+                              <Icon
+                                icon="mini-menu-arrow-left"
+                                iconHeight={24}
+                                iconWidth={24}
+                              />
+                            </span>
+                            Guard Post
+                          </Link>
                         </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
-                          <span className="">
-                            <Icon
-                              icon="mini-menu-arrow-left"
-                              iconHeight={24}
-                              iconWidth={24}
-                            />
-                          </span>
-                          Armored Pickup Truck
-                        </li>
-                        <li className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition">
-                          <span className="">
-                            <Icon
-                              icon="mini-menu-arrow-left"
-                              iconHeight={24}
-                              iconWidth={24}
-                            />
-                          </span>
-                          Special Purpose Vehicles
+                        <li className="">
+                          <Link
+                            to="/ballistic-protection"
+                            className="flex items-center gap-2 text-base font-normal leading-6 py-3 border-b-[1px] border-b-white lg:border-b-[0px] lg:py-0 font-Exo2 text-black/70 lg:text-white/90 hover:text-[#9eeb9c] transition"
+                          >
+                            <span className="">
+                              <Icon
+                                icon="mini-menu-arrow-left"
+                                iconHeight={24}
+                                iconWidth={24}
+                              />
+                            </span>
+                            Ballistic Standards
+                          </Link>
                         </li>
                       </ul>
                     </div>
