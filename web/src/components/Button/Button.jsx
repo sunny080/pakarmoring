@@ -34,18 +34,18 @@ export const Button = ({
         {label}
         {withIcon && (
           <div className="rounded-full w-7 h-7 border-[2px] border-primary_blue_600 flex items-center justify-center relative overflow-hidden">
-            <div className="relative  group-hover:transition-[3s] group-hover:left-[4px]  left-[-13px] transition-[3s]">
+            <div className="relative group-hover:left-[28px]  left-[12px] transition-[3s]">
               <Icon
                 icon="mini-menu-arrow-left"
-                iconHeight={14}
-                iconWidth={14}
+                iconHeight={24}
+                iconWidth={24}
               />
             </div>
-            <div className="relative   group-hover:transition-[3s] group-hover:left-[13px]  left-[-2px] transition-[3s]">
+            <div className="relative group-hover:left-[-12px]  left-[-28px] transition-[3s]">
               <Icon
                 icon="mini-menu-arrow-left"
-                iconHeight={14}
-                iconWidth={14}
+                iconHeight={24}
+                iconWidth={24}
               />
             </div>
           </div>

@@ -15,38 +15,42 @@ export const OurClientSection = ({
 }) => {
   const ourClientSectionClasses = clsx(
     otherClasses,
-    'max-w-[1512px] px-4 lg:px-20 xl:px-[156px] w-full mx-auto mb-[64px] lg:mb-[120px]'
+    'max-w-[1512px] w-full mx-auto mb-[64px] lg:mb-[120px]'
   )
 
   const settings = {
-    slidesToShow: 8,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
     autoplaySpeed: 0,
     speed: 2000,
     cssEase: 'linear',
+    rows: 2,
+    slidesPerRow: 2,
     infinite: true,
     dots: false,
     pauseOnHover: false,
     focusOnSelect: false,
     responsive: [
       {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 6,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 480,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 3,
+        },
+      },
+      // {
+      //   breakpoint: 768,
+      //   settings: {
+      //     slidesToShow: 3,
+      //   },
+      // },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          rows: 3,
+          slidesPerRow: 3,
         },
       },
     ],
@@ -74,7 +78,7 @@ export const OurClientSection = ({
           {cards.map(({ clientLogo }, index) => {
             return (
               <div key={index} className="w-full px-2">
-                <Image imageData={clientLogo} otherClasses="" />
+                <Image imageData={clientLogo} />
               </div>
             )
           })}
